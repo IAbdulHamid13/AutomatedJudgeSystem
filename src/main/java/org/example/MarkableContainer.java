@@ -1,6 +1,6 @@
-package org.example.Views;
+package org.example;
 
-interface MarkableContainer {
+public interface MarkableContainer {
     MarkableIterator createIterator();
 
     AssignmentSubmissionIterator getAssignmentSubmissionIterator();

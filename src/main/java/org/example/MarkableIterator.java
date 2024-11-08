@@ -1,6 +1,6 @@
-package org.example.Views;
+package org.example;
 
-interface MarkableIterator {
+public interface MarkableIterator {
     AssignmentSubmission next();
 
     boolean hasNext();
