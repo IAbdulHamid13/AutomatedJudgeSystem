@@ -27,12 +27,6 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-params</artifactId>
-      <version>5.7.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>com.itextpdf</groupId>
       <artifactId>itext-core</artifactId>
       <version>8.0.5</version>
