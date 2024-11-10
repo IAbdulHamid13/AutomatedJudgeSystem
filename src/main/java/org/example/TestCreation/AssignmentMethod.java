@@ -7,7 +7,6 @@ import lombok.Setter;
 
 @Getter
 public class AssignmentMethod extends AssignmentProperty {
-    private String name;
     private String returnType;
     @Setter private ArrayList<String> parameterTypes;
     @Setter private boolean isAbstract;
