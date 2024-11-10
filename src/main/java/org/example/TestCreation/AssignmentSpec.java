@@ -17,6 +17,14 @@ public class AssignmentSpec implements TestableContainer {
         this.specFiles.add(specFile);
     }
 
+    public AssignmentJava getJava(String javaName) {
+        for (AssignmentJava java : specFiles) {
+            if (java.getName().equals(javaName))
+                return java;
+        }
+        return null;
+    }
+    
     public TestableIterator getAssignmentItemIterator() {
         return new AssignmentItemIterator(specFiles);
     }

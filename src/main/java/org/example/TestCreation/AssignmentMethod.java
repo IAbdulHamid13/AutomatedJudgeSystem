@@ -2,49 +2,26 @@ package org.example.TestCreation;
 
 import java.util.ArrayList;
 
-public class AssignmentMethod implements Testable{
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+public class AssignmentMethod extends AssignmentProperty {
     private String name;
     private String returnType;
-    private ArrayList<String> parameterTypes;
-    private ArrayList<AccessFlags> accessFlags;
+    @Setter private ArrayList<String> parameterTypes;
+    @Setter private boolean isAbstract;
 
     public AssignmentMethod(String name, String returnType) {
+        super();
         this.name = name;
         this.returnType = returnType;
         this.parameterTypes = new ArrayList<String>();
-        this.accessFlags = new ArrayList<AccessFlags>();
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setReturnType(String returnType) {
-        this.returnType = returnType;
+        this.isAbstract = false;
     }
 
     public void addParameter(String parameter) {
         this.parameterTypes.add(parameter);
-    }
-
-    public void addAccessFlag(AccessFlags flag) {
-        this.accessFlags.add(flag);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getReturnType() {
-        return returnType;
-    }
-
-    public ArrayList<String> getParameters() {
-        return parameterTypes;
-    }
-
-    public ArrayList<AccessFlags> getAccessFlags() {
-        return accessFlags;
     }
 
     public void generateTest() {
