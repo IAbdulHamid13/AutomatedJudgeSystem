@@ -47,7 +47,7 @@ public class AssignmentAttribute extends AssignmentProperty {
 
             }
             
-            return dynamicTest("Attribute test for: " + " " + name + " " + type + ": ", () -> assertTrue(true));
+            return dynamicTest("Attribute test for: " + " " + name + " " + type + ": ", () -> assertTrue(false));
 
 
         } catch(ClassNotFoundException e){
