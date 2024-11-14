@@ -4,19 +4,20 @@ This branch was made in order to implement and test JUnit's DynamicTests
 
 ## Changes made from last commit
 
+- Implemented generateTest for AssignmentMethod
 
-- Migrated SpecCreation, TestCreation and Views folders to test folder for the purpose of using JUnit DynamicTests
+- Added className attribute to AssignmentMethod
 
-- Modified generateTest in Testable (and for every class that implements it) to return DynamicTest
-
-- Implemented generateTest for AssignmentAttribute
+- Changed returnType to Class<?> instead of String
 
 
 ## Next tasks
 
 
-- Implement generateTest for AssignmentConstructor, AssignmentMethod, AssignmentProperty and AssignmentJava
+- Implement generateTest for AssignmentConstructor, AssignmentProperty and AssignmentJava
 
 - Determine if AssignmentConstructor is necessary
+
+- Determine of current method for using DynamicTests is valid
 
 - Create functionality for running DynamicTests
