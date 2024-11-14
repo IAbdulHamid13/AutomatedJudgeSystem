@@ -2,6 +2,8 @@ package org.example.TestCreation;
 
 import java.util.ArrayList;
 
+import org.junit.jupiter.api.DynamicTest;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -74,11 +76,13 @@ public class AssignmentJava implements Testable {
         throw new IllegalArgumentException();
     }
 
-    public void generateTest() {
+    public DynamicTest generateTest() {
         // TODO: Good luck anwar :)
 
         for (Testable item : properties) {
             item.generateTest();
         }
+
+        return null;
     }
 }

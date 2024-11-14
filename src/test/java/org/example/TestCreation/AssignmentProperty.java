@@ -1,5 +1,7 @@
 package org.example.TestCreation;
 
+import org.junit.jupiter.api.DynamicTest;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,5 +19,5 @@ public abstract class AssignmentProperty implements Testable {
         this.isStatic = false;
     }
 
-    public abstract void generateTest();
+    public abstract DynamicTest generateTest();
 }

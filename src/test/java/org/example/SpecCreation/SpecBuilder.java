@@ -48,10 +48,10 @@ public class SpecBuilder {
         }
     }
 
-    public void addAttribute(String javaName, String attrName, String type) {
+    public void addAttribute(String javaName, String attrName, String type, String className) {
         try {
             AssignmentJava java = spec.getJava(javaName);
-            AssignmentAttribute attr = new AssignmentAttribute(attrName, type);
+            AssignmentAttribute attr = new AssignmentAttribute(attrName, type, className);
             java.addProperty(attr);
         } catch (NullPointerException e) {
             e.printStackTrace();

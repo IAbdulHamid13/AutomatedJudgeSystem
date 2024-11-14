@@ -2,6 +2,8 @@ package org.example.TestCreation;
 
 import java.util.ArrayList;
 
+import org.junit.jupiter.api.DynamicTest;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,7 +25,8 @@ public class AssignmentMethod extends AssignmentProperty {
         this.parameterTypes.add(parameter);
     }
 
-    public void generateTest() {
+    public DynamicTest generateTest() {
         // TODO
+        return null;
     }
 }
