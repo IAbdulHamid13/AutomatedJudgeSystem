@@ -1,4 +1,4 @@
-package org.example.Views;
+package org.example.FileExtraction;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -8,10 +8,10 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 public class ZipFileExtractor implements FileExtractor {
-    private final FileFilter fileFilter;
+    private final org.example.FileExtraction.FileFilter fileFilter;
     private final int bufferSize;
 
-    public ZipFileExtractor(FileFilter fileFilter, int bufferSize) {
+    public ZipFileExtractor(org.example.FileExtraction.FileFilter fileFilter, int bufferSize) {
         this.fileFilter = fileFilter;
         this.bufferSize = bufferSize;
     }
