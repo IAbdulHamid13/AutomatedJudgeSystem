@@ -1,4 +1,4 @@
-package org.example.Views;
+package org.example.FileExtraction;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -10,7 +10,7 @@ import java.util.zip.ZipFile;
 public class ZipExtractor {
     private final FilePathManager pathManager;
     private final FileExtractor studentZipExtractor;
-    private final FileFilter zipFileFilter;
+    private final org.example.FileExtraction.FileFilter zipFileFilter;
     private final int bufferSize;
 
     public ZipExtractor(String destinationDirectory, int bufferSize) {

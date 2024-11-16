@@ -1,4 +1,4 @@
-package org.example.Views;
+package org.example.FileExtraction;
 
 public class JavaFileFilter implements FileFilter {
     @Override
