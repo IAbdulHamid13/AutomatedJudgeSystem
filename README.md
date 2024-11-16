@@ -4,6 +4,10 @@ This branch was made in order to implement and test JUnit's DynamicTests
 
 ## Changes made from last commit
 
+- Ensured that void functions are testable
+
+  - Adjusted App.java to test void functions 
+
 - Implemented testable return values
     
     - User can enter arguments and an expected return value for the method being tested 
