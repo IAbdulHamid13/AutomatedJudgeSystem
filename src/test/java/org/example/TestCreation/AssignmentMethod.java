@@ -16,8 +16,10 @@ import lombok.Setter;
 public class AssignmentMethod extends AssignmentProperty {
     private String className;
     private String returnType;
+    @Setter private Object expectedValue;
     @Setter private ArrayList<String> parameterTypes;
     @Setter private boolean isAbstract;
+    private ArrayList<Object> testParams;
 
     public AssignmentMethod(String name, String returnType, ItemVisibility visibility, String className, Boolean isFinal, Boolean isStatic) {
         super();
@@ -29,10 +31,77 @@ public class AssignmentMethod extends AssignmentProperty {
         this.isAbstract = false;
         this.isFinal = isFinal;
         this.isStatic = isStatic;
+        testParams = new ArrayList<Object>();
+    }
+
+    public void setExpectedValue(String type, String value){
+
+        if(type.equals("int")){
+
+            //Initialise int var
+
+            expectedValue = (int)expectedValue;
+
+            expectedValue = Integer.valueOf(value);
+
+        }
+        else if(type.equals("String")){
+
+            //Add var to trueParams list
+
+            expectedValue = (String)expectedValue;
+
+            expectedValue = value;
+            
+        }
+        else if(type.equals("Boolean")){
+
+            //Initialise Boolean var
+
+            expectedValue = (Boolean)expectedValue;
+
+            expectedValue = Boolean.valueOf(value);
+            
+        }
+
     }
 
     public void addParameter(String parameter) {
         this.parameterTypes.add(parameter);
+    }
+
+    public void addTestParameter(String type, String value){
+
+        if(type.equals("int")){
+
+            //Initialise int var
+
+            int var = Integer.valueOf(value);
+
+            //Add var to trueParams list
+
+            testParams.add(var);
+
+        }
+        else if(type.equals("String")){
+
+            //Add var to trueParams list
+
+            testParams.add(value);
+            
+        }
+        else if(type.equals("Boolean")){
+
+            //Initialise Boolean var
+
+            Boolean var = Boolean.valueOf(value);
+
+            //Add var to trueParams list
+
+            testParams.add(var);
+            
+        }
+
     }
 
     public DynamicTest generateTest() {
@@ -131,7 +200,32 @@ public class AssignmentMethod extends AssignmentProperty {
 
                     if(m.getName().equals(name) && m.getReturnType().toString().equals(returnType) && parameterArrayList.equals(parameterTypes) && areModifiersEqual(methodString)){
 
-                        return dynamicTest("Method test for " + className + "." + name + " ", () -> assertTrue(true));
+                        if(testParams.size() != 0 && expectedValue != null){
+                            try{
+                                
+                                // System.out.println("Test params: " + testParams.toString());
+                                // System.out.println("Expected value: " + expectedValue.toString());
+
+                                //Get instance to invoke method
+
+                                Object instance = c.getDeclaredConstructor().newInstance();
+
+                                //If invoking the method returns the expected value, pass test case
+
+                                if(m.invoke(instance, testParams.toArray()).equals(expectedValue))
+                                    return dynamicTest("Method test for " + className + "." + name + " ", () -> assertTrue(true));
+
+                            }catch(Exception e){
+
+                                return dynamicTest("Method test for " + className + "." + name + " ", () -> assertTrue(false));
+
+                            }
+
+                            
+
+                        }
+                        else
+                            return dynamicTest("Method test for " + className + "." + name + " ", () -> assertTrue(true));
 
                     }
 

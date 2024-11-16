@@ -37,6 +37,11 @@ public class App {
         meth1.addParameter("int");
         meth1.addParameter("int");
 
+        meth1.addTestParameter("int", "1");
+        meth1.addTestParameter("int", "1");
+
+        meth1.setExpectedValue(2);
+
         meth2.addParameter("class java.lang.String");
         meth3.addParameter("class java.lang.Boolean");
 
