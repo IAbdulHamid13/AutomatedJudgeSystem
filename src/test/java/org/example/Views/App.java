@@ -27,6 +27,8 @@ public class App {
 
         AssignmentMethod meth4 = new AssignmentMethod("doSomething", "int", ItemVisibility.PUBLIC,"MyInterface", false, false);
 
+        AssignmentMethod meth5 = new AssignmentMethod("useless", "void", ItemVisibility.PUBLIC, "Calculator", false, false);
+
         AssignmentConstructor constr1 = new AssignmentConstructor("Calculator");
         AssignmentConstructor constr2 = new AssignmentConstructor("Calculator");
         AssignmentConstructor constr3 = new AssignmentConstructor("Calculator");
@@ -55,6 +57,8 @@ public class App {
         assignment.addProperty(meth3);
 
         assignment.addProperty(meth4);
+
+        assignment.addProperty(meth5);
 
         assignment.addProperty(constr1);
         assignment.addProperty(constr2);
