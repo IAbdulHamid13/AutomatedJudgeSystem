@@ -58,7 +58,7 @@ public class SpecBuilder {
         }
     }
 
-    public void addMethod(String javaName, String methodName, Class<?> returnType, String className) {
+    public void addMethod(String javaName, String methodName, String returnType, String className) {
         try {
             AssignmentJava java = spec.getJava(javaName);
             AssignmentMethod method = new AssignmentMethod(methodName, returnType, className);
@@ -110,7 +110,7 @@ public class SpecBuilder {
     }
 
     // Add to AssignmentMethods
-    public void setMethodParameters(String javaName, String methodName, ArrayList<Class<?>> parameterTypes) {
+    public void setMethodParameters(String javaName, String methodName, ArrayList<String> parameterTypes) {
         try {
             AssignmentJava java = spec.getJava(javaName);
             AssignmentMethod method = java.getMethod(methodName);

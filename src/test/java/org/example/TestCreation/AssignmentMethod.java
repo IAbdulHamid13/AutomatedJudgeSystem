@@ -15,20 +15,20 @@ import lombok.Setter;
 @Getter
 public class AssignmentMethod extends AssignmentProperty {
     private String className;
-    private Class<?> returnType;
-    @Setter private ArrayList<Class<?>> parameterTypes;
+    private String returnType;
+    @Setter private ArrayList<String> parameterTypes;
     @Setter private boolean isAbstract;
 
-    public AssignmentMethod(String name, Class<?> returnType, String className) {
+    public AssignmentMethod(String name, String returnType, String className) {
         super();
         this.name = name;
         this.returnType = returnType;
-        this.className = className;
-        this.parameterTypes = new ArrayList<Class<?>>();
+        this.className = "org.example.AssignmentFiles." + className;
+        this.parameterTypes = new ArrayList<String>();
         this.isAbstract = false;
     }
 
-    public void addParameter(Class<?> parameter) {
+    public void addParameter(String parameter) {
         this.parameterTypes.add(parameter);
     }
 
@@ -38,14 +38,41 @@ public class AssignmentMethod extends AssignmentProperty {
         try{
 
             Class<?> c = Class.forName(className);
-
-            Method[] methods = c.getMethods();
+            
+            Method[] methods = c.getDeclaredMethods();
 
             if(methods != null){
 
                 for(Method m : methods){
 
-                    if(m.getName().equals(name) && m.getReturnType().equals(returnType) && m.getParameterTypes().equals(parameterTypes.toArray()) && Modifier.isAbstract(m.getModifiers())){
+                    //Get parameter types and put into array
+
+                    ArrayList<String> parameterArrayList = new ArrayList<String>();
+
+                    for(Class<?> p : m.getParameterTypes()){
+
+                        parameterArrayList.add(p.toString());
+
+                    }
+                    
+                        
+                    // System.out.println("ACTUAL RETURN TYPE: " + m.getReturnType().toString());
+                    // System.out.println("GIVEN RETURN TYPE: " + returnType);
+                    // System.out.println("ACTUAL NAME: " + m.getName());
+                    // System.out.println("GIVEN NAME: " + name);
+                    // System.out.println("ACTUAL PARAMETER TYPE: " + parameterArrayList);
+                    // System.out.println("GIVEN PARAMETER TYPE: " + parameterTypes);
+
+                    // if(m.getName().equals(name))
+                    //     System.out.println("NAMES EQUAL");
+                    
+                    // if(parameterArrayList.equals(parameterTypes))
+                    //     System.out.println("PARAMTERES EQUAL");
+
+                    // if(m.getReturnType().toString().equals(returnType))
+                    //     System.out.println("RETURN TYPE EQUAL");
+
+                    if(m.getName().equals(name) && m.getReturnType().toString().equals(returnType) && parameterArrayList.equals(parameterTypes)){
 
                         return dynamicTest("Method test for " + className + "." + name + " ", () -> assertTrue(true));
 

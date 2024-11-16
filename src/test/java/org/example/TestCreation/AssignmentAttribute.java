@@ -33,7 +33,7 @@ public class AssignmentAttribute extends AssignmentProperty {
             Class<?> c = Class.forName(className);
 
             Field[] fields = c.getDeclaredFields();
-            Method[] methods = c.getMethods();
+            // Method[] methods = c.getMethods();
 
             // System.out.println("CLASS NAME: " + c.getName());
 
