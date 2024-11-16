@@ -11,15 +11,15 @@ public class Calculator {
 
     }
 
-    public Calculator(int a){
+    // public Calculator(int a){
 
-    }
+    // }
 
-    public Calculator(String a){
+    protected Calculator(String a){
         
     }
 
-    public Calculator(Boolean a){
+    private Calculator(Boolean a){
         
     }
 

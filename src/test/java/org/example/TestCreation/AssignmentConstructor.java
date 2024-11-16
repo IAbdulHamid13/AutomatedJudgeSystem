@@ -15,11 +15,13 @@ import lombok.Setter;
 @Setter
 public class AssignmentConstructor implements Testable {
     private String className;
+    private ItemVisibility visibility;
     private ArrayList<String> parameterTypes;
 
-    public AssignmentConstructor(String className) {
+    public AssignmentConstructor(String className, ItemVisibility visibility) {
         this.className = "org.example.AssignmentFiles." + className;
         this.parameterTypes = new ArrayList<String>();
+        this.visibility = visibility;
     }
 
     public void addParameter(String parameter) {
@@ -34,7 +36,7 @@ public class AssignmentConstructor implements Testable {
             Class<?> c = Class.forName(className);
             
             // ArrayList<Class<?>> parameterClassList = new ArrayList<Class<?>>();
-            String properName = "public " + className +"(";
+            String properName = visibility.toString().toLowerCase() + " " + className +"(";
 
             for(int i = 0;i < parameterTypes.size();i++){
 
@@ -44,13 +46,13 @@ public class AssignmentConstructor implements Testable {
                     // parameterClassList.add(Integer.class);
                     properName = properName + "int";
                 }
-                else if(p.equals("String")){
+                else if(p.equals("java.lang.String")){
                     // parameterClassList.add(String.class);
-                    properName = properName + "String";
+                    properName = properName + "java.lang.String";
                 }
-                else if(p.equals("Boolean")){
+                else if(p.equals("java.lang.Boolean")){
                     // parameterClassList.add(Boolean.class);
-                    properName = properName + "Boolean";
+                    properName = properName + "java.lang.Boolean";
                 }
 
                 if(i != parameterTypes.size() - 1)
@@ -63,7 +65,7 @@ public class AssignmentConstructor implements Testable {
             // System.out.println("parameterClassList TOSTRING: " + parameterClassList.toString());
             // System.out.println("parameterTypes TOSTRING: " + parameterTypes);
 
-            Constructor<?>[] constructors = c.getConstructors();
+            Constructor<?>[] constructors = c.getDeclaredConstructors();
 
 
             for(Constructor<?> constr : constructors){

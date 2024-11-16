@@ -29,9 +29,9 @@ public class App {
 
         AssignmentMethod meth5 = new AssignmentMethod("useless", "void", ItemVisibility.PUBLIC, "Calculator", false, false);
 
-        AssignmentConstructor constr1 = new AssignmentConstructor("Calculator");
-        AssignmentConstructor constr2 = new AssignmentConstructor("Calculator");
-        AssignmentConstructor constr3 = new AssignmentConstructor("Calculator");
+        AssignmentConstructor constr1 = new AssignmentConstructor("Calculator", ItemVisibility.PUBLIC);
+        AssignmentConstructor constr2 = new AssignmentConstructor("Calculator", ItemVisibility.PROTECTED);
+        AssignmentConstructor constr3 = new AssignmentConstructor("Calculator", ItemVisibility.PRIVATE);
 
         constr2.addParameter("java.lang.String");
         constr3.addParameter("java.lang.Boolean");
