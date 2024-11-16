@@ -4,7 +4,8 @@ public class Calculator {
 
     String brand = "CASIO";
     int model = 1;
-    Boolean isScientific = true;
+    static Boolean isScientific;
+    static int pizza = 0;
 
     public Calculator(){
 
@@ -22,8 +23,8 @@ public class Calculator {
         
     }
 
-    public String getBrand(String a){return brand;}
-    public Boolean isScientific(Boolean a){return isScientific;}
+    private final String getBrand(String a){return brand;}
+    protected static Boolean isScientific(Boolean a){return isScientific;}
 
     public int add(int a, int b){
 

@@ -58,10 +58,10 @@ public class SpecBuilder {
         }
     }
 
-    public void addMethod(String javaName, String methodName, String returnType, String className) {
+    public void addMethod(String javaName, String methodName, String returnType, ItemVisibility visibility, String className, Boolean isFinal, Boolean isStatic) {
         try {
             AssignmentJava java = spec.getJava(javaName);
-            AssignmentMethod method = new AssignmentMethod(methodName, returnType, className);
+            AssignmentMethod method = new AssignmentMethod(methodName, returnType, visibility, className, isFinal, isStatic);
             java.addProperty(method);
         } catch (NullPointerException e) {
             e.printStackTrace();

@@ -38,13 +38,6 @@ public class AssignmentAttribute extends AssignmentProperty {
             // System.out.println("CLASS NAME: " + c.getName());
 
             // System.out.println("NUMBER OF FIELDS: " + fields.length);
-            // System.out.println("NUMBER OF METHODS: " + methods.length);
-
-            // for(Method m : methods){
-
-            //     System.out.println("METHOD: " + m.getName());
-
-            // }
 
             if(fields != null){
 
@@ -57,10 +50,15 @@ public class AssignmentAttribute extends AssignmentProperty {
                     // System.out.println("ACTUAL NAME: " + f.getName());
                     // System.out.println("GIVEN NAME: " + name);
 
+                    // System.out.println("FIELD TOSTRING: " + f.toString());
+
 
                     if(f.getName().equals(name) && fieldType.equals(type)){
 
-                        return dynamicTest("Attribute test for: " + " " + name + " " + type, () -> assertTrue(true));
+                        
+
+
+                        return dynamicTest("Attribute test for: " + " " + type + " " + name, () -> assertTrue(true));
 
                     }
 
@@ -68,12 +66,12 @@ public class AssignmentAttribute extends AssignmentProperty {
 
             }
             
-            return dynamicTest("Attribute test for: " + " " + name + " " + type, () -> assertTrue(false));
+            return dynamicTest("Attribute test for: " + " " + type + " " + name, () -> assertTrue(false));
 
 
         } catch(ClassNotFoundException e){
 
-            return dynamicTest("Attribute test for: " + " " + name + " " + type, () -> assertTrue(false));
+            return dynamicTest("Attribute test for: " + " " + type + " " + name, () -> assertTrue(false));
 
         }
 

@@ -19,13 +19,16 @@ public class AssignmentMethod extends AssignmentProperty {
     @Setter private ArrayList<String> parameterTypes;
     @Setter private boolean isAbstract;
 
-    public AssignmentMethod(String name, String returnType, String className) {
+    public AssignmentMethod(String name, String returnType, ItemVisibility visibility, String className, Boolean isFinal, Boolean isStatic) {
         super();
         this.name = name;
         this.returnType = returnType;
+        this.visibility = visibility;
         this.className = "org.example.AssignmentFiles." + className;
         this.parameterTypes = new ArrayList<String>();
         this.isAbstract = false;
+        this.isFinal = isFinal;
+        this.isStatic = isStatic;
     }
 
     public void addParameter(String parameter) {
@@ -55,6 +58,27 @@ public class AssignmentMethod extends AssignmentProperty {
 
                     }
                     
+                    // System.out.println("METHOD TOSTRING: " + m.toString());
+
+                    String methodString = m.toString();
+
+                    // if(methodString.contains("public") && visibility.equals(ItemVisibility.PUBLIC)){
+                    //     System.out.println("METHOD IS PUBLIC");
+                    // }
+                    // else if(methodString.contains("private") && visibility.equals(ItemVisibility.PRIVATE)){
+                    //     System.out.println("METHOD IS PRIVATE");
+                    // }
+                    // else if(methodString.contains("protected") && visibility.equals(ItemVisibility.PROTECTED)){
+                    //     System.out.println("METHOD IS PROTECTED");
+                    // }
+
+                    // if(methodString.contains("final")){
+                    //     System.out.println("METHOD IS FINAL");
+                    // }
+
+                    // if(methodString.contains("static")){
+                    //     System.out.println("METHOD IS STATIC");
+                    // }
                         
                     // System.out.println("ACTUAL RETURN TYPE: " + m.getReturnType().toString());
                     // System.out.println("GIVEN RETURN TYPE: " + returnType);
@@ -72,9 +96,40 @@ public class AssignmentMethod extends AssignmentProperty {
                     // if(m.getReturnType().toString().equals(returnType))
                     //     System.out.println("RETURN TYPE EQUAL");
 
-                    System.out.println("\n\n");
+                    // String[] methodDetails = m.getName().split(" ");
 
-                    if(m.getName().equals(name) && m.getReturnType().toString().equals(returnType) && parameterArrayList.equals(parameterTypes)){
+                    // String methodName = methodDetails[1];
+
+                    // if(modifiersEqual(methodString, "final", isFinal))
+                    //     System.out.println("MODIFER FINAL FOUND " + m.toString());
+                    // else
+                    //     System.out.println("MODIFIER NOT FOUND " + m.toString());
+
+                    // if(modifiersEqual(methodString, "static", isStatic))
+                    //     System.out.println("MODIFER STATIC FOUND " + m.toString());
+                    // else
+                    //     System.out.println("MODIFIER NOT FOUND " + m.toString());
+                    
+                    // if(modifiersEqual2("private")){
+                    //     System.out.println("PRIVACY MODICKIERS EQUAL");
+                    // }
+
+                    // if(modifiersEqual2("public")){
+                    //     System.out.println("PRIVACY MODICKIERS EQUAL");
+                    // }
+
+                    // if(modifiersEqual2("protected")){
+                    //     System.out.println("PRIVACY MODICKIERS EQUAL");
+                    // }
+
+                    // if(areModifiersEqual(methodString))
+                    //     System.out.println("MODIFIERS EQUAL");
+                    // else
+                    //     System.out.println("MODIFIERS NOT EQUAL");
+
+                    // System.out.println("\n\n");
+
+                    if(m.getName().equals(name) && m.getReturnType().toString().equals(returnType) && parameterArrayList.equals(parameterTypes) && areModifiersEqual(methodString)){
 
                         return dynamicTest("Method test for " + className + "." + name + " ", () -> assertTrue(true));
 
@@ -93,4 +148,52 @@ public class AssignmentMethod extends AssignmentProperty {
         }
 
     }
+
+    private Boolean areModifiersEqual(String methodString){
+
+        // System.out.println("Function entered!");
+
+        if(isFinal && !methodString.contains("final")){
+            return false;
+        }
+        else if(!isFinal && methodString.contains("final"))
+            return false;
+
+        if(isStatic && !methodString.contains("static")){
+            return false;
+        }
+        else if(!isStatic && methodString.contains("static"))
+            return false;
+        
+        // if(isFinal && methodString.contains("final"))
+        //     System.out.println("It's actually final");
+        
+        // if(isStatic && methodString.contains("static"))
+        //     System.out.println("It's actually static");
+
+        
+        if(visibility == ItemVisibility.PRIVATE && methodString.contains("private")){
+
+            // System.out.println("Is final: " + isFinal);
+            // System.out.println("Is static: " + isStatic);
+            return true;
+        }
+        if(visibility == ItemVisibility.PUBLIC && methodString.contains("public")){
+
+            // System.out.println("Is final: " + isFinal);
+            // System.out.println("Is static: " + isStatic);
+            return true;
+        }
+        if(visibility == ItemVisibility.PROTECTED && methodString.contains("protected")){
+
+            // System.out.println("Is final: " + isFinal);
+            // System.out.println("Is static: " + isStatic);
+            return true;
+        }
+
+
+        return false;
+
+    }
+
 }
