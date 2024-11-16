@@ -4,20 +4,12 @@ This branch was made in order to implement and test JUnit's DynamicTests
 
 ## Changes made from last commit
 
-- Ensured that void functions are testable
+- Made access modifiers for constructors testable
 
-  - Adjusted App.java to test void functions 
-
-- Implemented testable return values
-    
-    - User can enter arguments and an expected return value for the method being tested 
-
-- Modified App.java for testing return values
+- Modified App.java for testing access modifiers for constructors
 
 
 ## Next tasks
-
-- Make access modifiers for constructors testable
 
 - Add functionality to test for Abstract properties
 
