@@ -79,10 +79,28 @@ public class AssignmentJava implements Testable {
     public DynamicTest generateTest() {
         // TODO: Good luck anwar :)
 
+        ArrayList<DynamicTest> tests = new ArrayList<DynamicTest>();
+
         for (Testable item : properties) {
-            item.generateTest();
+            
+            tests.add(item.generateTest());
+
         }
 
         return null;
+    }
+
+    public ArrayList<DynamicTest> generateTests() {
+        // TODO: Good luck anwar :)
+
+        ArrayList<DynamicTest> tests = new ArrayList<DynamicTest>();
+
+        for (Testable item : properties) {
+            
+            tests.add(item.generateTest());
+
+        }
+
+        return tests;
     }
 }
