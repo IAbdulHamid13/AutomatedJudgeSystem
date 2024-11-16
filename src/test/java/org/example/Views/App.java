@@ -16,9 +16,10 @@ public class App {
 
         AssignmentJava assignment = new AssignmentJava("Calculator");
 
-        AssignmentAttribute att1 = new AssignmentAttribute("brand", "class java.lang.String", "Calculator");
-        AssignmentAttribute att2 = new AssignmentAttribute("model", "int", "Calculator");
-        AssignmentAttribute att3 = new AssignmentAttribute("isScientific", "class java.lang.Boolean", "Calculator");
+        AssignmentAttribute att1 = new AssignmentAttribute("brand", "class java.lang.String", "Calculator", ItemVisibility.PRIVATE, false, false);
+        AssignmentAttribute att2 = new AssignmentAttribute("model", "int", "Calculator", ItemVisibility.PUBLIC, false, false);
+        AssignmentAttribute att3 = new AssignmentAttribute("isScientific", "class java.lang.Boolean", "Calculator", ItemVisibility.PRIVATE, false, true);
+        AssignmentAttribute att4 = new AssignmentAttribute("pizza", "int", "Calculator", ItemVisibility.PRIVATE, true, true);
 
         AssignmentMethod meth1 = new AssignmentMethod("add", "int", ItemVisibility.PUBLIC, "Calculator", false, false);
         AssignmentMethod meth2 = new AssignmentMethod("getBrand", "class java.lang.String", ItemVisibility.PRIVATE, "Calculator", true, false);
@@ -42,6 +43,7 @@ public class App {
         assignment.addProperty(att1);
         assignment.addProperty(att2);
         assignment.addProperty(att3);
+        assignment.addProperty(att4);
 
         assignment.addProperty(meth1);
         assignment.addProperty(meth2);

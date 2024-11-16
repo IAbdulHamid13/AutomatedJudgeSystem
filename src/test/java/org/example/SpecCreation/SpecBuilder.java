@@ -48,10 +48,10 @@ public class SpecBuilder {
         }
     }
 
-    public void addAttribute(String javaName, String attrName, String type, String className) {
+    public void addAttribute(String javaName, String attrName, String type, String className, ItemVisibility visibility, Boolean isFinal, Boolean isStatic) {
         try {
             AssignmentJava java = spec.getJava(javaName);
-            AssignmentAttribute attr = new AssignmentAttribute(attrName, type, className);
+            AssignmentAttribute attr = new AssignmentAttribute(attrName, type, className, visibility, isFinal, isStatic);
             java.addProperty(attr);
         } catch (NullPointerException e) {
             e.printStackTrace();

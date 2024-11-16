@@ -2,10 +2,10 @@ package org.example.AssignmentFiles;
 
 public class Calculator {
 
-    String brand = "CASIO";
-    int model = 1;
-    static Boolean isScientific;
-    static int pizza = 0;
+    private String brand = "CASIO";
+    public int model = 1;
+    private static Boolean isScientific;
+    final private static int pizza = 0;
 
     public Calculator(){
 
