@@ -4,18 +4,19 @@ This branch was made in order to implement and test JUnit's DynamicTests
 
 ## Changes made from last commit
 
-- Fixed implementation for Attribute tests
+- Fixed implementation for Method tests
 
-- Fixed pom.xml configuration so that App.java can be runned
+- Made example code in App.java to demonstrate Method tests
 
-- Made example code in App.java to demonstrate Attribute tests
-
-- Changed type of 'type' field in AssignmentAttribute back to String
+- Changed type of 'returnType' field in AssignmentAttribute back to String
 
 
 ## Next tasks
 
+- Add functionality for testing for if a property is public abstract
 
-- Implement generateTest for AssignmentMethod, AssignmentConstructor, AssignmentProperty
+- Add functionality to check for if a property is a class or an interface
+
+- Implement generateTest for AssignmentConstructor, AssignmentProperty
 
 - Determine if AssignmentConstructor is necessary
