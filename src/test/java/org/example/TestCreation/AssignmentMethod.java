@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
 import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.DynamicTest;
@@ -21,14 +20,14 @@ public class AssignmentMethod extends AssignmentProperty {
     @Setter private boolean isAbstract;
     private ArrayList<Object> testParams;
 
-    public AssignmentMethod(String name, String returnType, ItemVisibility visibility, String className, Boolean isFinal, Boolean isStatic) {
+    public AssignmentMethod(String name, String returnType, ItemVisibility visibility, String className, Boolean isFinal, Boolean isStatic, Boolean isAbstract) {
         super();
         this.name = name;
         this.returnType = returnType;
         this.visibility = visibility;
         this.className = "org.example.AssignmentFiles." + className;
         this.parameterTypes = new ArrayList<String>();
-        this.isAbstract = false;
+        this.isAbstract = isAbstract;
         this.isFinal = isFinal;
         this.isStatic = isStatic;
         testParams = new ArrayList<Object>();
@@ -257,6 +256,11 @@ public class AssignmentMethod extends AssignmentProperty {
             return false;
         }
         else if(!isStatic && methodString.contains("static"))
+            return false;
+        
+        if(isAbstract && !methodString.contains("abstract"))
+            return false;
+        else if(!isAbstract && methodString.contains("abstract"))
             return false;
         
         // if(isFinal && methodString.contains("final"))

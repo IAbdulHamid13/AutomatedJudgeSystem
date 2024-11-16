@@ -21,13 +21,15 @@ public class App {
         AssignmentAttribute att3 = new AssignmentAttribute("isScientific", "class java.lang.Boolean", "Calculator", ItemVisibility.PRIVATE, false, true);
         AssignmentAttribute att4 = new AssignmentAttribute("pizza", "int", "Calculator", ItemVisibility.PRIVATE, true, true);
 
-        AssignmentMethod meth1 = new AssignmentMethod("add", "int", ItemVisibility.PUBLIC, "Calculator", false, false);
-        AssignmentMethod meth2 = new AssignmentMethod("getBrand", "class java.lang.String", ItemVisibility.PRIVATE, "Calculator", true, false);
-        AssignmentMethod meth3 = new AssignmentMethod("isScientific", "class java.lang.Boolean", ItemVisibility.PROTECTED,"Calculator", false, true);
+        AssignmentMethod meth1 = new AssignmentMethod("add", "int", ItemVisibility.PUBLIC, "Calculator", false, false, false);
+        AssignmentMethod meth2 = new AssignmentMethod("getBrand", "class java.lang.String", ItemVisibility.PRIVATE, "Calculator", true, false, false);
+        AssignmentMethod meth3 = new AssignmentMethod("isScientific", "class java.lang.Boolean", ItemVisibility.PROTECTED,"Calculator", false, true, false);
+        AssignmentMethod meth4 = new AssignmentMethod("useless", "void", ItemVisibility.PUBLIC, "Calculator", false, false, false);
 
-        AssignmentMethod meth4 = new AssignmentMethod("doSomething", "int", ItemVisibility.PUBLIC,"MyInterface", false, false);
+        AssignmentMethod meth5 = new AssignmentMethod("doSomething", "int", ItemVisibility.PUBLIC,"MyInterface", false, false, false);
 
-        AssignmentMethod meth5 = new AssignmentMethod("useless", "void", ItemVisibility.PUBLIC, "Calculator", false, false);
+        AssignmentMethod meth6 = new AssignmentMethod("abstractMethod", "void", ItemVisibility.PUBLIC,"MyAbstractClass", false, false, true);
+        AssignmentMethod meth7 = new AssignmentMethod("noneAbstractMethod", "void", ItemVisibility.PUBLIC,"MyAbstractClass", false, false, false);
 
         AssignmentConstructor constr1 = new AssignmentConstructor("Calculator", ItemVisibility.PUBLIC);
         AssignmentConstructor constr2 = new AssignmentConstructor("Calculator", ItemVisibility.PROTECTED);
@@ -55,10 +57,12 @@ public class App {
         assignment.addProperty(meth1);
         assignment.addProperty(meth2);
         assignment.addProperty(meth3);
-
         assignment.addProperty(meth4);
 
         assignment.addProperty(meth5);
+
+        assignment.addProperty(meth6);
+        assignment.addProperty(meth7);
 
         assignment.addProperty(constr1);
         assignment.addProperty(constr2);

@@ -1,5 +1,6 @@
 package org.example.AssignmentFiles;
 
+@SuppressWarnings("unused")
 public class Calculator {
 
     private String brand = "CASIO";
