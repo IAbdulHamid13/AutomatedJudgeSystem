@@ -4,17 +4,17 @@ This branch was made in order to implement and test JUnit's DynamicTests
 
 ## Changes made from last commit
 
-- Refined tests for Attributes so that access modifiers can now be tested for
+- Implemented testable return values
+    
+    - User can enter arguments and an expected return value for the method being tested 
 
-- Modified App.java for testing Attribute access modifiers
+- Modified App.java for testing return values
 
 
 ## Next tasks
 
 - Make access modifiers for constructors testable
 
-- Add functionality to test for return values (where test parameters are entered)
+- Add functionality to test for Abstract properties
 
 - Add functionality to check for if a property is a class or an interface
-
-- Determine if AssignmentConstructor is necessary
