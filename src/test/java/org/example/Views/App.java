@@ -2,7 +2,9 @@ package org.example.Views;
 
 import java.util.ArrayList;
 
+import org.example.AssignmentFiles.Calculator;
 import org.example.TestCreation.AssignmentAttribute;
+import org.example.TestCreation.AssignmentConstructor;
 import org.example.TestCreation.AssignmentJava;
 import org.example.TestCreation.AssignmentMethod;
 import org.junit.jupiter.api.DynamicTest;
@@ -22,8 +24,18 @@ public class App {
         AssignmentMethod meth2 = new AssignmentMethod("getBrand", "class java.lang.String", "Calculator");
         AssignmentMethod meth3 = new AssignmentMethod("isScientific", "class java.lang.Boolean", "Calculator");
 
+        AssignmentConstructor constr1 = new AssignmentConstructor("Calculator");
+        AssignmentConstructor constr2 = new AssignmentConstructor("Calculator");
+        AssignmentConstructor constr3 = new AssignmentConstructor("Calculator");
+
+        constr2.addParameter("java.lang.String");
+        constr3.addParameter("java.lang.Boolean");
+
         meth1.addParameter("int");
         meth1.addParameter("int");
+
+        meth2.addParameter("class java.lang.String");
+        meth3.addParameter("class java.lang.Boolean");
 
         assignment.addProperty(att1);
         assignment.addProperty(att2);
@@ -32,6 +44,10 @@ public class App {
         assignment.addProperty(meth1);
         assignment.addProperty(meth2);
         assignment.addProperty(meth3);
+
+        assignment.addProperty(constr1);
+        assignment.addProperty(constr2);
+        assignment.addProperty(constr3);
 
         ArrayList<DynamicTest> tests = assignment.generateTests();
 

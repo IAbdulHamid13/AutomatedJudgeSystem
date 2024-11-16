@@ -68,10 +68,10 @@ public class SpecBuilder {
         }
     }
 
-    public void addConstructor(String javaName) {
+    public void addConstructor(String javaName, String className) {
         try {
             AssignmentJava java = spec.getJava(javaName);
-            AssignmentConstructor constructor = new AssignmentConstructor();
+            AssignmentConstructor constructor = new AssignmentConstructor(className);
             java.addProperty(constructor);
         } catch (NullPointerException e) {
             e.printStackTrace();

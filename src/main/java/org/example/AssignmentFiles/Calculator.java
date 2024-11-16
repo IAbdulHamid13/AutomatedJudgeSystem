@@ -6,8 +6,24 @@ public class Calculator {
     int model = 1;
     Boolean isScientific = true;
 
-    public String getBrand(){return brand;}
-    public Boolean isScientific(){return isScientific;}
+    public Calculator(){
+
+    }
+
+    public Calculator(int a){
+
+    }
+
+    public Calculator(String a){
+        
+    }
+
+    public Calculator(Boolean a){
+        
+    }
+
+    public String getBrand(String a){return brand;}
+    public Boolean isScientific(Boolean a){return isScientific;}
 
     public int add(int a, int b){
 

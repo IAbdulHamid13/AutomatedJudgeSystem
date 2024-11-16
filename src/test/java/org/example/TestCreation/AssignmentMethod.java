@@ -72,6 +72,8 @@ public class AssignmentMethod extends AssignmentProperty {
                     // if(m.getReturnType().toString().equals(returnType))
                     //     System.out.println("RETURN TYPE EQUAL");
 
+                    System.out.println("\n\n");
+
                     if(m.getName().equals(name) && m.getReturnType().toString().equals(returnType) && parameterArrayList.equals(parameterTypes)){
 
                         return dynamicTest("Method test for " + className + "." + name + " ", () -> assertTrue(true));

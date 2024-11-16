@@ -24,7 +24,7 @@ public class AssignmentJava implements Testable {
         this.javaType = JavaType.CLASS;
         this.name = name;
         this.properties = new ArrayList<Testable>();
-        this.properties.add(new AssignmentConstructor());
+        // this.properties.add(new AssignmentConstructor()); //why does this exist??
         this.isAbstract = false;
         this.isPublic = true;
     }
