@@ -4,14 +4,16 @@ This branch was made in order to implement and test JUnit's DynamicTests
 
 ## Changes made from last commit
 
-- Implemented generateTest for AssignmentConstructor
+- Refined tests for Methods so that access modifiers can be tested for
 
-- Added className field to AssignmentConstructor for getting class object
+- Created MyInterface.java for testing interfaces
 
-- Made example code in App.java to demonstrate Constructor tests
+- Modified App.java for testing Method access modifiers
 
 
 ## Next tasks
+
+- Make access modifiers for attributes and constructors testable
 
 - Add functionality for testing for if a property is public/private/protected/abstract/final
 
