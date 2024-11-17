@@ -7,9 +7,7 @@ import org.example.TestCreation.AssignmentJava;
 import org.example.TestCreation.AssignmentMethod;
 import org.example.TestCreation.AssignmentSpec;
 import org.example.TestCreation.ItemVisibility;
-import org.example.TestCreation.TestMaker;
 import org.example.TestCreation.TestMarker;
-import org.example.TestCreation.TestRunner;
 
 public class App {
     public static void main(String[] args) {
@@ -94,17 +92,9 @@ public class App {
 
         TestMarker testMarker = new TestMarker(aSpec);
 
-        // System.out.println(testMarker.getResults().toString());
-
         testMarker.markTests();
 
         testMarker.printResults();
-
-        // TestMaker testMaker = new TestMaker(aSpec);
-
-        // TestRunner testRunner = new TestRunner(testMaker.createTests());
-
-        // testRunner.runTests();
 
 
     }
