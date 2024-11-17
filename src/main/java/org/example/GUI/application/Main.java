@@ -16,7 +16,7 @@ import javafx.scene.image.Image;
 //import javafx.scene.paint.Color;
 
 public class Main extends Application {
-
+	
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -33,9 +33,6 @@ public class Main extends Application {
 			stage.getIcons().add(icon);
 
 			stage.setTitle("Assignment Marking Program");
-
-			stage.setFullScreen(true);
-			stage.setFullScreenExitHint("THERE IS NO ESCAPE >:( , unless you press esc");
 
 			stage.setScene(scene);
 
