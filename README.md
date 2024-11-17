@@ -1,17 +1,11 @@
 ## Changes made from last commit
 
 
-- Implemented TestMarker
+- Implemented removal functionality for tests
     
-    - TestMarker uses TestMaker and TestRunner to run tests and generate results
+    - This was done by adding 'removeProperty' function to AssignmentJava
  
-  - Results are stored in an array list where data for each test is stored in threes. Eg: (name, marksAwarded, marksWorth, name, MarksAwarded, marksWorth, . . . )
- 
-    - This required adding functionality to testable: getName, getMarksAwarded and getMarksWorth
-   
-    - Hence classes that implement Testable also implement these functions
-
-- Added default constructors for testable properties that were missing it
+    - This was tested and works successfully
 
 
 ## Next tasks
