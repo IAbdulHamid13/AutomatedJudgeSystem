@@ -1,7 +1,7 @@
 ## Changes made from last commit
 
 
-- Successfully merged 'Dynamic-Assignment-Tests' with master branch and ensured tests are still functional
+- Replaced Assignment_Controller.java with version implemented in GUI2 branch
 
 
 ## Next tasks
