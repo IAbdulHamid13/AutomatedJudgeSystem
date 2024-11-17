@@ -3,6 +3,7 @@ package org.example.Views;
 import java.util.ArrayList;
 
 import org.example.TestCreation.AssignmentAttribute;
+import org.example.TestCreation.AssignmentClass;
 import org.example.TestCreation.AssignmentConstructor;
 import org.example.TestCreation.AssignmentJava;
 import org.example.TestCreation.AssignmentMethod;
@@ -35,7 +36,8 @@ public class App {
         AssignmentConstructor constr2 = new AssignmentConstructor("Calculator", ItemVisibility.PROTECTED, 5);
         AssignmentConstructor constr3 = new AssignmentConstructor("Calculator", ItemVisibility.PRIVATE, 5);
 
-        // AssignmentClass class1 = new AssignmentClass("Calculator");
+        AssignmentClass class1 = new AssignmentClass("Calculator");
+        AssignmentClass interface1 = new AssignmentClass("MyInterface");
 
         
 
@@ -71,6 +73,10 @@ public class App {
         assignment.addProperty(constr1);
         assignment.addProperty(constr2);
         assignment.addProperty(constr3);
+
+        assignment.addProperty(class1);
+
+        assignment.addProperty(interface1);
 
         ArrayList<DynamicTest> tests = assignment.generateTests();
 
