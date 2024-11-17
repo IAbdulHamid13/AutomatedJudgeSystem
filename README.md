@@ -1,15 +1,23 @@
 ## Changes made from last commit
 
-- Added default constructors for testable Assignment properties
 
-- Added lombok @Setters to attributes for testable Assignment properties
+- Implemented TestMarker
+    
+    - TestMarker uses TestMaker and TestRunner to run tests and generate results
+ 
+  - Results are stored in an array list where data for each test is stored in threes. Eg: (name, marksAwarded, marksWorth, name, MarksAwarded, marksWorth, . . . )
+ 
+    - This required adding functionality to testable: getName, getMarksAwarded and getMarksWorth
+   
+    - Hence classes that implement Testable also implement these functions
 
-- AssignmentProperties can now be created empty and filled in later due to these changes
+- Added default constructors for testable properties that were missing it
 
 
 ## Next tasks
 
-- Must create some sort of TestResults class for creating object that stores results (which consist of the test names, marks awarded and marks worth)
+
+- Revise overall program to determine if there are any possible improvements
 
 - **Merge GUI branch and ensure GUI is still functional**
 
