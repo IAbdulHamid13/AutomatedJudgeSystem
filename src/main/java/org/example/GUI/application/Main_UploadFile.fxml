@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.SubScene?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Assignment_Controller">
+   <children>
+      <AnchorPane layoutX="10.0" layoutY="10.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Separator layoutX="143.0" layoutY="27.0" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="374.0" prefWidth="7.0" />
+            <Button layoutY="27.0" mnemonicParsing="false" onAction="#menuCreateSpecifications" prefHeight="27.0" prefWidth="146.0" text="Create Specification" />
+            <Button layoutY="54.0" mnemonicParsing="false" onAction="#menuUploadAssignments" prefHeight="27.0" prefWidth="146.0" text="Upload Assignments" />
+            <Button layoutY="81.0" mnemonicParsing="false" onAction="#menuGenerateReport" prefHeight="27.0" prefWidth="146.0" text="Generate Report" />
+            <Button layoutY="372.0" mnemonicParsing="false" onAction="#menuExit" prefHeight="27.0" prefWidth="146.0" text="Exit" />
+            <Button layoutX="290.0" layoutY="318.0" mnemonicParsing="false" onAction="#openDirectory" text="Upload zip" />
+            <SubScene height="200.0" layoutX="228.0" layoutY="54.0" width="200.0">
+              <root>
+                <Region />
+              </root>
+            </SubScene>
+            <Button layoutY="344.0" mnemonicParsing="false" onAction="#menuHelp" prefHeight="27.0" prefWidth="146.0" text="Help" />
+            <Button layoutX="286.0" layoutY="358.0" mnemonicParsing="false" text="Remove File" />
+            <TextArea layoutX="228.0" layoutY="54.0" prefHeight="200.0" prefWidth="200.0" text="Word Lemur Up" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
