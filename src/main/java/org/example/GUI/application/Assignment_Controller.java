@@ -46,16 +46,17 @@ public class Assignment_Controller extends Menu_Controller{
         private void handleZipFile(File zipFile) throws Exception {
             Boolean passed = false;
             try{
-                ZipFileExtractor zipExtractor = new ZipFileExtractor(null, 4096);  // Use to extract the grouped file (zip containing zips) (change parameters, just used random values)
-                zipExtractor.extract(zipFile.getAbsolutePath(), "src\\main\\java\\org\\example\\AssignmentFiles");
+                ZipExtractor zipExtractor = new ZipExtractor("src\\main\\java\\org\\example\\AssignmentFiles", 4096);   //if not passed, ie exception 
+                zipExtractor.extractZipFile(zipFile.getAbsolutePath());                             // for single submission 
+                
                 passed = true;
             }catch (Exception ex) {
                 ex.printStackTrace();
                 System.out.println("Error processing file: " + ex.getMessage());   //catch so that it doesn't return
             }
             if(!passed){
-                ZipExtractor zipExtractor = new ZipExtractor("src\\main\\java\\org\\example\\AssignmentFiles", 4096);   //if not passed, ie exception 
-                zipExtractor.extractZipFile(zipFile.getAbsolutePath());                             // for single submission 
+                ZipFileExtractor zipExtractor = new ZipFileExtractor(null, 4096);  // Use to extract the grouped file (zip containing zips) (change parameters, just used random values)
+                zipExtractor.extract(zipFile.getAbsolutePath(), "src\\main\\java\\org\\example\\AssignmentFiles");                          // for single submission 
             }
         }
 
