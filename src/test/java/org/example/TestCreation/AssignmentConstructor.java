@@ -17,11 +17,13 @@ public class AssignmentConstructor implements Testable {
     private String className;
     private ItemVisibility visibility;
     private ArrayList<String> parameterTypes;
+    private int marks;
 
-    public AssignmentConstructor(String className, ItemVisibility visibility) {
+    public AssignmentConstructor(String className, ItemVisibility visibility, int marks) {
         this.className = "org.example.AssignmentFiles." + className;
         this.parameterTypes = new ArrayList<String>();
         this.visibility = visibility;
+        this.marks = marks;
     }
 
     public void addParameter(String parameter) {

@@ -48,30 +48,30 @@ public class SpecBuilder {
         }
     }
 
-    public void addAttribute(String javaName, String attrName, String type, String className, ItemVisibility visibility, Boolean isFinal, Boolean isStatic) {
+    public void addAttribute(String javaName, String attrName, String type, String className, ItemVisibility visibility, Boolean isFinal, Boolean isStatic, int marks) {
         try {
             AssignmentJava java = spec.getJava(javaName);
-            AssignmentAttribute attr = new AssignmentAttribute(attrName, type, className, visibility, isFinal, isStatic);
+            AssignmentAttribute attr = new AssignmentAttribute(attrName, type, className, visibility, isFinal, isStatic, marks);
             java.addProperty(attr);
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
     }
 
-    public void addMethod(String javaName, String methodName, String returnType, ItemVisibility visibility, String className, Boolean isFinal, Boolean isStatic, Boolean isAbstract) {
+    public void addMethod(String javaName, String methodName, String returnType, ItemVisibility visibility, String className, Boolean isFinal, Boolean isStatic, Boolean isAbstract, int marks) {
         try {
             AssignmentJava java = spec.getJava(javaName);
-            AssignmentMethod method = new AssignmentMethod(methodName, returnType, visibility, className, isFinal, isStatic, isAbstract);
+            AssignmentMethod method = new AssignmentMethod(methodName, returnType, visibility, className, isFinal, isStatic, isAbstract, marks);
             java.addProperty(method);
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
     }
 
-    public void addConstructor(String javaName, String className, ItemVisibility visibility) {
+    public void addConstructor(String javaName, String className, ItemVisibility visibility, int marks) {
         try {
             AssignmentJava java = spec.getJava(javaName);
-            AssignmentConstructor constructor = new AssignmentConstructor(className, visibility);
+            AssignmentConstructor constructor = new AssignmentConstructor(className, visibility, marks);
             java.addProperty(constructor);
         } catch (NullPointerException e) {
             e.printStackTrace();

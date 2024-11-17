@@ -12,6 +12,7 @@ public abstract class AssignmentProperty implements Testable {
     protected ItemVisibility visibility;
     protected boolean isFinal;
     protected boolean isStatic;
+    protected int marks;
 
     public AssignmentProperty() {
         this.visibility = ItemVisibility.PUBLIC;

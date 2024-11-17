@@ -18,7 +18,7 @@ public class AssignmentAttribute extends AssignmentProperty {
     private String className;
     
 
-    public AssignmentAttribute(String name, String type, String className, ItemVisibility visibility, Boolean isFinal, Boolean isStatic) {
+    public AssignmentAttribute(String name, String type, String className, ItemVisibility visibility, Boolean isFinal, Boolean isStatic, int marks) {
         super();
         this.name = name;
         this.type = type;
@@ -26,6 +26,7 @@ public class AssignmentAttribute extends AssignmentProperty {
         this.visibility = visibility;
         this.isFinal = isFinal;
         this.isStatic = isStatic;
+        this.marks = marks;
     }
 
     public DynamicTest generateTest() {

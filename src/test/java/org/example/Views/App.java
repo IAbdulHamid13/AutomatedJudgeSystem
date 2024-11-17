@@ -16,24 +16,24 @@ public class App {
 
         AssignmentJava assignment = new AssignmentJava("Calculator");
 
-        AssignmentAttribute att1 = new AssignmentAttribute("brand", "class java.lang.String", "Calculator", ItemVisibility.PRIVATE, false, false);
-        AssignmentAttribute att2 = new AssignmentAttribute("model", "int", "Calculator", ItemVisibility.PUBLIC, false, false);
-        AssignmentAttribute att3 = new AssignmentAttribute("isScientific", "class java.lang.Boolean", "Calculator", ItemVisibility.PRIVATE, false, true);
-        AssignmentAttribute att4 = new AssignmentAttribute("pizza", "int", "Calculator", ItemVisibility.PRIVATE, true, true);
+        AssignmentAttribute att1 = new AssignmentAttribute("brand", "class java.lang.String", "Calculator", ItemVisibility.PRIVATE, false, false, 5);
+        AssignmentAttribute att2 = new AssignmentAttribute("model", "int", "Calculator", ItemVisibility.PUBLIC, false, false, 5);
+        AssignmentAttribute att3 = new AssignmentAttribute("isScientific", "class java.lang.Boolean", "Calculator", ItemVisibility.PRIVATE, false, true, 5);
+        AssignmentAttribute att4 = new AssignmentAttribute("pizza", "int", "Calculator", ItemVisibility.PRIVATE, true, true, 5);
 
-        AssignmentMethod meth1 = new AssignmentMethod("add", "int", ItemVisibility.PUBLIC, "Calculator", false, false, false);
-        AssignmentMethod meth2 = new AssignmentMethod("getBrand", "class java.lang.String", ItemVisibility.PRIVATE, "Calculator", true, false, false);
-        AssignmentMethod meth3 = new AssignmentMethod("isScientific", "class java.lang.Boolean", ItemVisibility.PROTECTED,"Calculator", false, true, false);
-        AssignmentMethod meth4 = new AssignmentMethod("useless", "void", ItemVisibility.PUBLIC, "Calculator", false, false, false);
+        AssignmentMethod meth1 = new AssignmentMethod("add", "int", ItemVisibility.PUBLIC, "Calculator", false, false, false, 8);
+        AssignmentMethod meth2 = new AssignmentMethod("getBrand", "class java.lang.String", ItemVisibility.PRIVATE, "Calculator", true, false, false, 8);
+        AssignmentMethod meth3 = new AssignmentMethod("isScientific", "class java.lang.Boolean", ItemVisibility.PROTECTED,"Calculator", false, true, false, 8);
+        AssignmentMethod meth4 = new AssignmentMethod("useless", "void", ItemVisibility.PUBLIC, "Calculator", false, false, false, 8);
 
-        AssignmentMethod meth5 = new AssignmentMethod("doSomething", "int", ItemVisibility.PUBLIC,"MyInterface", false, false, false);
+        AssignmentMethod meth5 = new AssignmentMethod("doSomething", "int", ItemVisibility.PUBLIC,"MyInterface", false, false, false, 8);
 
-        AssignmentMethod meth6 = new AssignmentMethod("abstractMethod", "void", ItemVisibility.PUBLIC,"MyAbstractClass", false, false, true);
-        AssignmentMethod meth7 = new AssignmentMethod("noneAbstractMethod", "void", ItemVisibility.PUBLIC,"MyAbstractClass", false, false, false);
+        AssignmentMethod meth6 = new AssignmentMethod("abstractMethod", "void", ItemVisibility.PUBLIC,"MyAbstractClass", false, false, true, 8);
+        AssignmentMethod meth7 = new AssignmentMethod("noneAbstractMethod", "void", ItemVisibility.PUBLIC,"MyAbstractClass", false, false, false, 8);
 
-        AssignmentConstructor constr1 = new AssignmentConstructor("Calculator", ItemVisibility.PUBLIC);
-        AssignmentConstructor constr2 = new AssignmentConstructor("Calculator", ItemVisibility.PROTECTED);
-        AssignmentConstructor constr3 = new AssignmentConstructor("Calculator", ItemVisibility.PRIVATE);
+        AssignmentConstructor constr1 = new AssignmentConstructor("Calculator", ItemVisibility.PUBLIC, 5);
+        AssignmentConstructor constr2 = new AssignmentConstructor("Calculator", ItemVisibility.PROTECTED, 5);
+        AssignmentConstructor constr3 = new AssignmentConstructor("Calculator", ItemVisibility.PRIVATE, 5);
 
         // AssignmentClass class1 = new AssignmentClass("Calculator");
 
