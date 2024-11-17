@@ -2,7 +2,6 @@ package org.example.GUI.application;
 
 import java.io.File;
 
-import org.example.FileExtraction.JavaFileFilter;
 import org.example.FileExtraction.ZipFileExtractor;
 import org.example.FileExtraction.ZipExtractor;
 import org.example.FileExtraction.ZipFileFilter;
@@ -24,8 +23,6 @@ public class Assignment_Controller extends Menu_Controller{
 			e.consume();
 			//add a method to pass zip to testing
 			ZipFileFilter zipTester = new ZipFileFilter();
-			JavaFileFilter javaTester = new JavaFileFilter();
-			Boolean isJavaFile = javaTester.accept(file.getName());
 			Boolean isZipFile = zipTester.accept(file.getName());
 			if (isZipFile){
 				try {
