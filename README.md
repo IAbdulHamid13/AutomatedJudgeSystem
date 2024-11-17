@@ -1,17 +1,15 @@
 ## Changes made from last commit
 
-- Implemented marksRewarded attribute to testable assignment properties
+- Added default constructors for testable Assignment properties
 
-- Added addClass function to SpecBuilder
+- Added lombok @Setters to attributes for testable Assignment properties
 
-- Added code in App.java to test TestMaker and TestRunner's ability to handle an ASpec with multiple assignments
+- AssignmentProperties can now be created empty and filled in later due to these changes
 
 
 ## Next tasks
 
-- Must handle creating test results
-
-- Determine if when running each test, the test should or shouldn't display the AssignmentJava and AssignmentSpec it belongs to
+- Must create some sort of TestResults class for creating object that stores results (which consist of the test names, marks awarded and marks worth)
 
 - **Merge GUI branch and ensure GUI is still functional**
 
