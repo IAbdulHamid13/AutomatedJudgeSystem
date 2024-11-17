@@ -20,7 +20,7 @@ public class Menu_Controller {
 	public void menuCreateSpecifications(ActionEvent e) throws IOException {
 		System.out.println("Menu Specification");
 		
-		root = FXMLLoader.load(getClass().getResource("Main_Specification.fxml"));
+		root = FXMLLoader.load(getClass().getResource("/Main_Specification.fxml"));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -28,7 +28,7 @@ public class Menu_Controller {
 	}
 	
 	public void menuUploadAssignments(ActionEvent e) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("Main_UploadFile.fxml"));
+		root = FXMLLoader.load(getClass().getResource("/Main_UploadFile.fxml"));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -36,7 +36,7 @@ public class Menu_Controller {
 	}
 	
 	public void menuGenerateReport(ActionEvent e) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("Main_Report.fxml"));
+		root = FXMLLoader.load(getClass().getResource("/Main_Report.fxml"));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -44,7 +44,7 @@ public class Menu_Controller {
 	}
 	
 	public void menuHelp(ActionEvent e) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("Main_Help.fxml"));
+		root = FXMLLoader.load(getClass().getResource("/Main_Help.fxml"));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
@@ -52,7 +52,7 @@ public class Menu_Controller {
 	}
 	
 	public void menuExit(ActionEvent e) throws IOException {
-		root = FXMLLoader.load(getClass().getResource("Main_Exit.fxml"));
+		root = FXMLLoader.load(getClass().getResource("/Main_Exit.fxml"));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
 		scene = new Scene(root);
 		stage.setScene(scene);
