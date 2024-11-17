@@ -1,14 +1,14 @@
 package org.example.Views;
 
-import java.util.ArrayList;
-
 import org.example.TestCreation.AssignmentAttribute;
 import org.example.TestCreation.AssignmentClass;
 import org.example.TestCreation.AssignmentConstructor;
 import org.example.TestCreation.AssignmentJava;
 import org.example.TestCreation.AssignmentMethod;
+import org.example.TestCreation.AssignmentSpec;
 import org.example.TestCreation.ItemVisibility;
-import org.junit.jupiter.api.DynamicTest;
+import org.example.TestCreation.TestMaker;
+import org.example.TestCreation.TestRunner;
 
 public class App {
     public static void main(String[] args) {
@@ -78,26 +78,16 @@ public class App {
 
         assignment.addProperty(interface1);
 
-        ArrayList<DynamicTest> tests = assignment.generateTests();
 
-        for(int i = 1;i < tests.size();i++){
+        AssignmentSpec aSpec = new AssignmentSpec();
 
-            DynamicTest t = tests.get(i);
+        aSpec.addSpecFile(assignment);
 
-            System.out.println("Name: " + t.getDisplayName());
+        TestMaker testMaker = new TestMaker(aSpec);
 
-            try{
+        TestRunner testRunner = new TestRunner(testMaker.createTests());
 
-                t.getExecutable().execute();
-                System.out.println("Test case passed!\n");
-
-            } catch(Throwable throwable){
-
-                System.out.println("Test case failed!\n");
-
-            }
-
-        }
+        testRunner.runTests();
 
     }
 }

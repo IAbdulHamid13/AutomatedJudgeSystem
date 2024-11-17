@@ -9,7 +9,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AssignmentJava implements Testable {
+public class AssignmentJava{
     private JavaType javaType;
     private String name;
     private boolean isAbstract;
@@ -24,7 +24,6 @@ public class AssignmentJava implements Testable {
         this.javaType = JavaType.CLASS;
         this.name = name;
         this.properties = new ArrayList<Testable>();
-        // this.properties.add(new AssignmentConstructor()); //why does this exist??
         this.isAbstract = false;
         this.isPublic = true;
     }
@@ -74,19 +73,6 @@ public class AssignmentJava implements Testable {
             return false;
         }
         throw new IllegalArgumentException();
-    }
-
-    public DynamicTest generateTest() {
-
-        ArrayList<DynamicTest> tests = new ArrayList<DynamicTest>();
-
-        for (Testable item : properties) {
-            
-            tests.add(item.generateTest());
-
-        }
-
-        return null;
     }
 
     public ArrayList<DynamicTest> generateTests() {

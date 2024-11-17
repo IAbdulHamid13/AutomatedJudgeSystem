@@ -1,5 +1,9 @@
 package org.example.TestCreation;
 
+import java.util.ArrayList;
+
+import org.junit.jupiter.api.DynamicTest;
+
 public class TestMaker {
     private TestableIterator iterator;
     @SuppressWarnings("unused")
@@ -10,10 +14,15 @@ public class TestMaker {
         this.iterator = spec.getAssignmentItemIterator();
     }
 
-    public void createTests() {
+    public ArrayList<ArrayList<DynamicTest>> createTests() {
+
+        ArrayList<ArrayList<DynamicTest>> tests = new ArrayList<ArrayList<DynamicTest>>();
+
         while (iterator.hasNext()) {
-            Testable next = iterator.next();
-            next.generateTest();
+            AssignmentJava next = iterator.next();
+            tests.add(next.generateTests());
         }
+
+        return tests;
     }
 }
