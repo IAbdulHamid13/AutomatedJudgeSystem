@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 
@@ -18,13 +16,11 @@
             <Button layoutY="81.0" mnemonicParsing="false" onAction="#menuGenerateReport" prefHeight="27.0" prefWidth="146.0" text="Generate Report" />
             <Button layoutY="385.0" mnemonicParsing="false" onAction="#menuExit" prefHeight="27.0" prefWidth="146.0" text="Exit" />
             <Button layoutY="357.0" mnemonicParsing="false" onAction="#menuHelp" prefHeight="27.0" prefWidth="146.0" text="Help" />
-            <Button layoutX="253.0" layoutY="331.0" mnemonicParsing="false" text="Remove All Specification" />
-            <SplitMenuButton layoutX="258.0" layoutY="277.0" mnemonicParsing="false" text="Add  Specification">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
-            </SplitMenuButton>
+            <Button layoutX="166.0" layoutY="294.0" mnemonicParsing="false" text="Add Attribute" />
+            <Button layoutX="305.0" layoutY="294.0" mnemonicParsing="false" text="Add Constructor" />
+            <Button layoutX="472.0" layoutY="294.0" mnemonicParsing="false" text="Add Method" />
+            <Button layoutX="425.0" layoutY="358.0" mnemonicParsing="false" text="Confirm" />
+            <Button layoutX="255.0" layoutY="358.0" mnemonicParsing="false" text="Cancel" />
          </children>
       </AnchorPane>
    </children>

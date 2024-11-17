@@ -2,6 +2,7 @@ package org.example.GUI.application;
 
 import java.io.File;
 
+import org.example.FileExtraction.JavaFileFilter;
 import org.example.FileExtraction.ZipFileExtractor;
 import org.example.FileExtraction.ZipExtractor;
 import org.example.FileExtraction.ZipFileFilter;
