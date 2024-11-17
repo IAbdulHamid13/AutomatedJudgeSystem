@@ -25,6 +25,7 @@ public class Specification_Controller extends Menu_Controller{
 	private Parent root;
 
 	public String javaName;
+	public String attributeName;
 	public void submitJavaName(ActionEvent a) throws IOException {
 		//java file name is acepted from input and to be passed to assignmentJava
 		javaName = nameSubmit.getText();

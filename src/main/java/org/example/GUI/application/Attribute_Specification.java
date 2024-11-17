@@ -17,16 +17,18 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Attribute_Specification extends Menu_Controller{
+
+
     @FXML
-    private String attributeName;
+    private TextField attributeName;
     @FXML
-    private String attributeClassType;
+    private TextField attributeClassType;
     @FXML
-    private String attributeClassName;
+    private TextField attributeClassName;
     @FXML
-    private String attributeVisibility;
+    private TextField attributeVisibility;
     @FXML
-    private int attributeMark;
+    private TextField attributeMark;
     @FXML
     private CheckBox attributeFinal;
     @FXML
@@ -37,6 +39,25 @@ public class Attribute_Specification extends Menu_Controller{
 	private Parent root;
 
     public void submitAttribute(ActionEvent e){
+		String name = attributeName.getText();
+        String type = attributeClassType.getText();
+        String className = attributeClassName.getText();
+        String visibility = attributeVisibility.getText();
+        int mark = Integer.parseInt(attributeMark.getText());
+
+        String isFinal = "false";
+        String isAbstract = "false";
+
+        if(attributeFinal.isEmpty()){
+            isFinal = "false";
+        }
+        else
+            isFinal = "true";
+        
+        if(attributeAbstract.isEmpty())
+            isAbstract = "true";
+        else
+            isAbstract = "false";
 
     }
 
