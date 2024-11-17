@@ -38,6 +38,8 @@ public class TestMarker {
 
         for(AssignmentJava j : javaFiles){
 
+            results.add("File: " + j.getName());
+
             for(Testable property : j.getProperties()){
 
                 int[] marks = {1, 2};
@@ -64,11 +66,21 @@ public class TestMarker {
 
     public void printResults(){
 
-        for(int i = 0;i <= results.size() - 3; i = i + 3){
+        int i = 0;
 
-            System.out.println("Property tested for: " + results.get(i));
-            System.out.println("Marks earned: " + results.get(i + 1) + "/" + results.get(i + 2) + "\n");
+        while (i < results.size()) {
+            String entry = results.get(i);
+            
+            if (entry.startsWith("File: ")) { // Check if the entry is a file header
 
+                System.out.println(entry + "\n\n");
+                i++;
+            } else {
+                
+                System.out.println("Property tested for: " + results.get(i));
+                System.out.println("Marks earned: " + results.get(i + 1) + "/" + results.get(i + 2) + "\n");
+                i += 3;
+            }
         }
 
     }
