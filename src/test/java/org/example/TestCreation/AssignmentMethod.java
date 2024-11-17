@@ -20,7 +20,7 @@ public class AssignmentMethod extends AssignmentProperty {
     @Setter private boolean isAbstract;
     private ArrayList<Object> testParams;
 
-    public AssignmentMethod(String name, String returnType, ItemVisibility visibility, String className, Boolean isFinal, Boolean isStatic, Boolean isAbstract, int marks) {
+    public AssignmentMethod(String name, String returnType, ItemVisibility visibility, String className, Boolean isFinal, Boolean isStatic, Boolean isAbstract, int marksWorth) {
         super();
         this.name = name;
         this.returnType = returnType;
@@ -31,7 +31,8 @@ public class AssignmentMethod extends AssignmentProperty {
         this.isFinal = isFinal;
         this.isStatic = isStatic;
         testParams = new ArrayList<Object>();
-        this.marks = marks;
+        this.marksWorth = marksWorth;
+        this.marksAwarded = 0;
     }
 
     public void setExpectedValue(String type, String value){
