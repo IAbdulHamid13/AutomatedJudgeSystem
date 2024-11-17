@@ -1,4 +1,4 @@
-package application;
+package org.example.GUI.application;
 
 import java.io.File;
 
