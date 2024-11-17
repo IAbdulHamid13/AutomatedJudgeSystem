@@ -66,6 +66,8 @@ public class TestMarker {
 
     public void printResults(){
 
+        StringBuilder finalOutput = new StringBuilder();
+
         int i = 0;
 
         while (i < results.size()) {
@@ -73,15 +75,24 @@ public class TestMarker {
             
             if (entry.startsWith("File: ")) { // Check if the entry is a file header
 
+                finalOutput.append(entry).append("\n\n");
+
                 System.out.println(entry + "\n\n");
                 i++;
             } else {
                 
-                System.out.println("Property tested for: " + results.get(i));
-                System.out.println("Marks earned: " + results.get(i + 1) + "/" + results.get(i + 2) + "\n");
+                String propertyTested = "Property tested for: " + results.get(i);
+                String marksEarned = "Marks earned: " + results.get(i + 1) + "/" + results.get(i + 2) + "\n";
+
+                finalOutput.append(propertyTested).append("\n").append(marksEarned).append("\n");
+                System.out.println(propertyTested);
+                System.out.println(marksEarned);
+
                 i += 3;
             }
         }
+
+        System.out.println("Final Output (the String):\n" + finalOutput.toString());
 
     }
     
