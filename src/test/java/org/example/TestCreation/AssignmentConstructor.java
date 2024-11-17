@@ -29,13 +29,11 @@ public class AssignmentConstructor implements Testable {
     }
 
     public DynamicTest generateTest() {
-        // TODO
 
         try{
 
             Class<?> c = Class.forName(className);
             
-            // ArrayList<Class<?>> parameterClassList = new ArrayList<Class<?>>();
             String properName = visibility.toString().toLowerCase() + " " + className +"(";
 
             for(int i = 0;i < parameterTypes.size();i++){
@@ -43,15 +41,15 @@ public class AssignmentConstructor implements Testable {
                 String p = parameterTypes.get(i);
 
                 if(p.equals("int")){
-                    // parameterClassList.add(Integer.class);
+                    
                     properName = properName + "int";
                 }
                 else if(p.equals("java.lang.String")){
-                    // parameterClassList.add(String.class);
+                    
                     properName = properName + "java.lang.String";
                 }
                 else if(p.equals("java.lang.Boolean")){
-                    // parameterClassList.add(Boolean.class);
+                    
                     properName = properName + "java.lang.Boolean";
                 }
 
@@ -62,16 +60,10 @@ public class AssignmentConstructor implements Testable {
 
             properName = properName + ")";
 
-            // System.out.println("parameterClassList TOSTRING: " + parameterClassList.toString());
-            // System.out.println("parameterTypes TOSTRING: " + parameterTypes);
-
             Constructor<?>[] constructors = c.getDeclaredConstructors();
 
 
             for(Constructor<?> constr : constructors){
-
-                // System.out.println("ACTUAL CONSTRUCTOR NAME: " + constr.toString());
-                // System.out.println("GIVEN CONSTRUCTOR NAME: " + properName);
 
                 //Since the name contrains parameter types we can return test based on soley this
 

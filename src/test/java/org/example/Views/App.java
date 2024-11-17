@@ -35,6 +35,10 @@ public class App {
         AssignmentConstructor constr2 = new AssignmentConstructor("Calculator", ItemVisibility.PROTECTED);
         AssignmentConstructor constr3 = new AssignmentConstructor("Calculator", ItemVisibility.PRIVATE);
 
+        // AssignmentClass class1 = new AssignmentClass("Calculator");
+
+        
+
         constr2.addParameter("java.lang.String");
         constr3.addParameter("java.lang.Boolean");
 

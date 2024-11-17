@@ -77,7 +77,6 @@ public class AssignmentJava implements Testable {
     }
 
     public DynamicTest generateTest() {
-        // TODO: Good luck anwar :)
 
         ArrayList<DynamicTest> tests = new ArrayList<DynamicTest>();
 
@@ -91,7 +90,6 @@ public class AssignmentJava implements Testable {
     }
 
     public ArrayList<DynamicTest> generateTests() {
-        // TODO: Good luck anwar :)
 
         ArrayList<DynamicTest> tests = new ArrayList<DynamicTest>();
 

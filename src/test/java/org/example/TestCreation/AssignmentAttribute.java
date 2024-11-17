@@ -29,40 +29,20 @@ public class AssignmentAttribute extends AssignmentProperty {
     }
 
     public DynamicTest generateTest() {
-        //TODO: Insert code here
 
         try{
             
             Class<?> c = Class.forName(className);
 
             Field[] fields = c.getDeclaredFields();
-            // Method[] methods = c.getMethods();
-
-            // System.out.println("CLASS NAME: " + c.getName());
-
-            // System.out.println("NUMBER OF FIELDS: " + fields.length);
 
             if(fields != null){
 
                 for(Field f : fields){
 
                     String fieldType = f.getType().toString();
-                        
-                    // System.out.println("ACTUAL TYPE: " + fieldType);
-                    // System.out.println("GIVEN TYPE: " + type);
-                    // System.out.println("ACTUAL NAME: " + f.getName());
-                    // System.out.println("GIVEN NAME: " + name);
 
                     String modifierString = Modifier.toString(f.getModifiers());
-
-                    // System.out.println("FIELD MODIFIERS for " + f.getName() + ": " + modifierString);
-
-                    // System.err.println("Are modifiers equal?" + areModifiersEqual(modifierString));
-
-                    // if(modifierString.contains("private") && visibility == ItemVisibility.PRIVATE)
-                    //     System.out.println("ITS PRIVATE");
-
-                    //  System.out.println("\n\n");
 
                     if(f.getName().equals(name) && fieldType.equals(type) && areModifiersEqual(modifierString)){
 
@@ -87,15 +67,6 @@ public class AssignmentAttribute extends AssignmentProperty {
 
     private Boolean areModifiersEqual(String modifierString){
 
-        // String s = visibility.toString();
-
-        // if(isStatic)
-        //     s = s + " static";
-        // if(isFinal)
-        //     s = s + " final";
-        
-        // System.out.println("S IS EQUAL TO THIS: " + s);
-
         Boolean isStringFinal = modifierString.contains("final");
         Boolean isStringStatic = modifierString.contains("static");
 
@@ -103,65 +74,23 @@ public class AssignmentAttribute extends AssignmentProperty {
 
             if(visibility == ItemVisibility.PRIVATE && modifierString.contains("private")){
 
-                // System.out.println("Is final: " + isFinal);
-                // System.out.println("Is static: " + isStatic);
                 return true;
             }
             if(visibility == ItemVisibility.PUBLIC && modifierString.contains("public")){
     
-                // System.out.println("Is final: " + isFinal);
-                // System.out.println("Is static: " + isStatic);
                 return true;
+
             }
             if(visibility == ItemVisibility.PROTECTED && modifierString.contains("protected")){
     
-                // System.out.println("Is final: " + isFinal);
-                // System.out.println("Is static: " + isStatic);
                 return true;
+
             }
 
         }
     
     
         return false;
-
-        // System.out.println("Function entered!");
-
-        // if(isFinal && !modifierString.contains("final")){
-        //     return false;
-        // }
-        // else if(!isFinal && modifierString.contains("final"))
-        //     return false;
-
-        // if(isStatic && !modifierString.contains("static")){
-        //     return false;
-        // }
-        // else if(!isStatic && modifierString.contains("static"))
-        //     return false;
-        
-        // System.out.println("Function made it this far...");
-        
-        // if(visibility == ItemVisibility.PRIVATE && modifierString.contains("private")){
-
-        //     System.out.println("Is final: " + isFinal);
-        //     System.out.println("Is static: " + isStatic);
-        //     return true;
-        // }
-        // if(visibility == ItemVisibility.PUBLIC && modifierString.contains("public")){
-
-        //     System.out.println("Is final: " + isFinal);
-        //     System.out.println("Is static: " + isStatic);
-        //     return true;
-        // }
-        // if(visibility == ItemVisibility.PROTECTED && modifierString.contains("protected")){
-
-        //     System.out.println("Is final: " + isFinal);
-        //     System.out.println("Is static: " + isStatic);
-        //     return true;
-        // }
-
-
-        // return false;
 
     }
 }
