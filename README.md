@@ -1,15 +1,17 @@
 ## Changes made from last commit
 
 
-- Implemented 'marks' attribute for AssignmentProperty, AssignmentAttribute, AssignmentMethod and AssignmentConstructor
+- Implemented 'totalMarks' attribute for AssignmentSpec
 
-- Modified App.java to adjust to implementation of 'marks'
+- Added code in App.java to test AssignmentClass property
+    
+    - The user can now test for the existence of a class or an interface
 
 
 ## Next tasks
 
 
-- Implement total marks for an assignment
+- Determine how to handle AssignmentJava using 'generateTests' instead of 'generateTest'
 
 - **Merge GUI branch and ensure GUI is still functional**
 
