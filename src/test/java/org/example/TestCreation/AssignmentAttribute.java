@@ -19,6 +19,7 @@ public class AssignmentAttribute extends AssignmentProperty {
 
     public AssignmentAttribute(){
         super();
+        this.marksAwarded = 0;
     }
     
 
@@ -51,6 +52,8 @@ public class AssignmentAttribute extends AssignmentProperty {
                     String modifierString = Modifier.toString(f.getModifiers());
 
                     if(f.getName().equals(name) && fieldType.equals(type) && areModifiersEqual(modifierString)){
+
+                        marksAwarded = marksWorth;
 
                         return dynamicTest("Attribute test for: " + " " + type + " " + name, () -> assertTrue(true));
 

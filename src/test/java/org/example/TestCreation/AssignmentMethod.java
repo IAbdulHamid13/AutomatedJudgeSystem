@@ -22,6 +22,7 @@ public class AssignmentMethod extends AssignmentProperty {
 
     public AssignmentMethod(){
         super();
+        this.marksAwarded = 0;
     }
 
     public AssignmentMethod(String name, String returnType, ItemVisibility visibility, String className, Boolean isFinal, Boolean isStatic, Boolean isAbstract, int marksWorth) {
@@ -144,8 +145,12 @@ public class AssignmentMethod extends AssignmentProperty {
 
                                 //If invoking the method returns the expected value, pass test case
 
-                                if(m.invoke(instance, testParams.toArray()).equals(expectedValue))
+                                if(m.invoke(instance, testParams.toArray()).equals(expectedValue)){
+                        
+                                    marksAwarded = marksWorth;
                                     return dynamicTest("Method test for " + className + "." + name + " ", () -> assertTrue(true));
+                                
+                                }
 
                             }catch(Exception e){
 
@@ -156,8 +161,12 @@ public class AssignmentMethod extends AssignmentProperty {
                             
 
                         }
-                        else
+                        else{
+                            
+                            marksAwarded = marksWorth;
                             return dynamicTest("Method test for " + className + "." + name + " ", () -> assertTrue(true));
+                        
+                        }
 
                     }
 

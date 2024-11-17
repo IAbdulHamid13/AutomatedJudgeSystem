@@ -14,7 +14,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AssignmentConstructor implements Testable {
-    @Setter private String className;
+    @Setter @Getter  private String className;
     @Setter private ItemVisibility visibility;
     @Setter private ArrayList<String> parameterTypes;
     @Setter private int marksWorth;
@@ -22,6 +22,7 @@ public class AssignmentConstructor implements Testable {
 
     public AssignmentConstructor(){
         this.visibility = ItemVisibility.PUBLIC;
+        this.marksAwarded = 0;
     }
 
     public AssignmentConstructor(String className, ItemVisibility visibility, int marksWorth) {
@@ -30,6 +31,21 @@ public class AssignmentConstructor implements Testable {
         this.visibility = visibility;
         this.marksWorth = marksWorth;
         this.marksAwarded = 0;
+    }
+
+    @Override
+    public String getName() {
+        return className;
+    }
+
+    @Override
+    public int getMarksWorth(){
+        return marksWorth;
+    }
+
+    @Override
+    public int getMarksAwarded(){
+        return marksAwarded;
     }
 
     public void addParameter(String parameter) {
@@ -75,8 +91,12 @@ public class AssignmentConstructor implements Testable {
 
                 //Since the name contrains parameter types we can return test based on soley this
 
-                if(constr.toString().equals(properName))
+                if(constr.toString().equals(properName)){
+                
+                    marksAwarded = marksWorth;
                     return dynamicTest("Constructor test for " + className + " ", () -> assertTrue(true));
+                
+                }
 
             }
 

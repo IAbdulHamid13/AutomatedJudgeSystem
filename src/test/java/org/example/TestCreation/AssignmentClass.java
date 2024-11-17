@@ -16,14 +16,20 @@ public class AssignmentClass extends AssignmentProperty{
 
     public AssignmentClass(){
         super();
+        this.marksAwarded = 0;
     }
 
     public AssignmentClass(String className, int marksWorth){
 
-        this.className = className;
+        this.className = "org.example.AssignmentFiles." + className;
         this.marksWorth = marksWorth;
         this.marksAwarded = 0;
 
+    }
+    
+    @Override
+    public String getName(){
+        return className;
     }
 
     @SuppressWarnings("unused")
@@ -34,11 +40,13 @@ public class AssignmentClass extends AssignmentProperty{
 
             Class<?> c = Class.forName(className);
 
+            marksAwarded = marksWorth;
+
             return dynamicTest("Class test for: " + className, () -> assertTrue(true));
 
         } catch(ClassNotFoundException e){
 
-            return dynamicTest("Class test for: " + className, () -> assertTrue(true));
+            return dynamicTest("Class test for: " + className, () -> assertTrue(false));
 
         }
         

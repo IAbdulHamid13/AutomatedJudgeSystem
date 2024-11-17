@@ -8,6 +8,7 @@ import org.example.TestCreation.AssignmentMethod;
 import org.example.TestCreation.AssignmentSpec;
 import org.example.TestCreation.ItemVisibility;
 import org.example.TestCreation.TestMaker;
+import org.example.TestCreation.TestMarker;
 import org.example.TestCreation.TestRunner;
 
 public class App {
@@ -91,11 +92,19 @@ public class App {
 
         aSpec.addSpecFile(assignment2);
 
-        TestMaker testMaker = new TestMaker(aSpec);
+        TestMarker testMarker = new TestMarker(aSpec);
 
-        TestRunner testRunner = new TestRunner(testMaker.createTests());
+        // System.out.println(testMarker.getResults().toString());
 
-        testRunner.runTests();
+        testMarker.markTests();
+
+        testMarker.printResults();
+
+        // TestMaker testMaker = new TestMaker(aSpec);
+
+        // TestRunner testRunner = new TestRunner(testMaker.createTests());
+
+        // testRunner.runTests();
 
 
     }
