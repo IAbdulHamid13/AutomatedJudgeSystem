@@ -36,10 +36,6 @@ public class Assignment_Controller extends Menu_Controller{
 					System.out.println("Error processing file: " + ex.getMessage());
 				}
 			}
-			// else if(isJavaFile){
-			// 	System.out.println("Processing Java file: " + file.getName());
-			// 	handleJavaFile(file); // Call helper method for Java file processing                                  //NOTE- we didn't say that we would take java files directly: to uncomment or delete 
-			// }
 			else{
 				System.out.println("Unsupported file type: " + file.getName());
 				System.out.println("Unsupported file type selected: " + file.getName());
@@ -49,13 +45,7 @@ public class Assignment_Controller extends Menu_Controller{
 
 		}
 
-		// Helper method to handle Java files
-		private void handleJavaFile(File javaFile) {
-			System.out.println("Analyzing Java file: " + javaFile.getAbsolutePath());
-			//this part is to send to testing (not implemented yet) - for Anwar
-		}
 	
-
 		private void handleZipFile(File zipFile) throws Exception {
 			Boolean passed = false;
 			try{
@@ -70,14 +60,6 @@ public class Assignment_Controller extends Menu_Controller{
 				ZipExtractor zipExtractor = new ZipExtractor("src\\main\\java\\org\\example\\AssignmentFiles", 4096);   //if not passed, ie exception 
 				zipExtractor.extractZipFile(zipFile.getAbsolutePath());                             // for single submission 
 			}
-
-			List<File> javaFiles = findJavaFiles(extractionDestination);
-			for (File javaFile : javaFiles) {
-				System.out.println("Found Java file: " + javaFile.getAbsolutePath());
-				// Process the Java file if needed
-			}	
-	
-			// System.out.println("ZIP file extracted to: " + extractionDestination.getAbsolutePath());
 		}
 
 		
