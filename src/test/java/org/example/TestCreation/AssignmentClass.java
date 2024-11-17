@@ -12,7 +12,11 @@ import lombok.Setter;
 @Setter
 public class AssignmentClass extends AssignmentProperty{
 
-    private String className;
+    @Setter private String className;
+
+    public AssignmentClass(){
+        super();
+    }
 
     public AssignmentClass(String className, int marksWorth){
 

@@ -14,8 +14,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AssignmentAttribute extends AssignmentProperty {
-    private String type;
-    private String className;
+    @Setter private String type;
+    @Setter private String className;
+
+    public AssignmentAttribute(){
+        super();
+    }
     
 
     public AssignmentAttribute(String name, String type, String className, ItemVisibility visibility, Boolean isFinal, Boolean isStatic, int marksWorth) {

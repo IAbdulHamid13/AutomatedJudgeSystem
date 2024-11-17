@@ -14,11 +14,15 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AssignmentConstructor implements Testable {
-    private String className;
-    private ItemVisibility visibility;
-    private ArrayList<String> parameterTypes;
-    private int marksWorth;
-    private int marksAwarded;
+    @Setter private String className;
+    @Setter private ItemVisibility visibility;
+    @Setter private ArrayList<String> parameterTypes;
+    @Setter private int marksWorth;
+    @Setter private int marksAwarded;
+
+    public AssignmentConstructor(){
+        this.visibility = ItemVisibility.PUBLIC;
+    }
 
     public AssignmentConstructor(String className, ItemVisibility visibility, int marksWorth) {
         this.className = "org.example.AssignmentFiles." + className;

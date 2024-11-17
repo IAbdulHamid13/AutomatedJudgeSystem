@@ -13,12 +13,16 @@ import lombok.Setter;
 
 @Getter
 public class AssignmentMethod extends AssignmentProperty {
-    private String className;
-    private String returnType;
+    @Setter private String className;
+    @Setter private String returnType;
     @Setter private Object expectedValue;
     @Setter private ArrayList<String> parameterTypes;
     @Setter private boolean isAbstract;
-    private ArrayList<Object> testParams;
+    @Setter private ArrayList<Object> testParams;
+
+    public AssignmentMethod(){
+        super();
+    }
 
     public AssignmentMethod(String name, String returnType, ItemVisibility visibility, String className, Boolean isFinal, Boolean isStatic, Boolean isAbstract, int marksWorth) {
         super();
