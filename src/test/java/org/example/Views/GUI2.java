@@ -7,6 +7,11 @@ package org.example.Views;
 import java.io.File;
 import javax.swing.JFileChooser;
 
+import org.example.FileExtraction.ZipExtractor;
+import org.example.FileExtraction.ZipFileExtractor;
+import org.example.FileExtraction.ZipFileFilter;
+import org.example.GUI.application.Assignment_Controller;
+
 /**
  *
  * @author Anwar
@@ -600,8 +605,47 @@ public class GUI2 extends javax.swing.JFrame {
         File f = chooser.getSelectedFile();
         String filename = f.getAbsolutePath();
         jTextField3.setText(filename);
+        new Assignment_Controller();
+
+        ZipFileFilter zipTester = new ZipFileFilter();
+        Boolean isZipFile = zipTester.accept(filename);
+        if (isZipFile){
+            try {
+                System.out.println("Processing ZIP file: " + filename);
+                handleZipFile(filename); // Call helper method for ZIP extraction - it tries for a grouped and then single 
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                System.out.println("Error processing file: " + ex.getMessage());
+            }
+        }
+        else{
+            System.out.println("Unsupported file type: " + filename);
+            System.out.println("Unsupported file type selected: " + filename);
+            return;       //add error handling here if you like
+        }
+
+
+        }
+
+
+        private void handleZipFile(String zipFile) throws Exception {
+            Boolean passed = false;
+            try{
+                ZipExtractor zipExtractor = new ZipExtractor("src\\main\\java\\org\\example\\AssignmentFiles", 4096);   //if not passed, ie exception 
+                zipExtractor.extractZipFile(zipFile);                             // for single submission 
+                
+                passed = true;
+            }catch (Exception ex) {
+                ex.printStackTrace();
+                System.out.println("Error processing file: " + ex.getMessage());   //catch so that it doesn't return
+            }
+            if(!passed){
+                ZipFileExtractor zipExtractor = new ZipFileExtractor(null, 4096);  // Use to extract the grouped file (zip containing zips) (change parameters, just used random values)
+                zipExtractor.extract(zipFile, "src\\main\\java\\org\\example\\AssignmentFiles");                          // for single submission 
+            }
+        }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    //GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
