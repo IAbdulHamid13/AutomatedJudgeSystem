@@ -1,3 +1,6 @@
+## How to run
+Run project with `mvn clean javafx:run`
+
 ## Changes made from last commit
 
 - Migrated GUI from main folder to test folder
