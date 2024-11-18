@@ -2,10 +2,11 @@ package org.example.TestCreation;
 
 import java.util.ArrayList;
 
+import lombok.Getter;
 import lombok.Setter;
 
 public class AssignmentSpec implements TestableContainer {
-    private ArrayList<AssignmentJava> specFiles;
+    @Getter private ArrayList<AssignmentJava> specFiles;
     @Setter private int totalMarks;
 
     public AssignmentSpec() {

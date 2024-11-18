@@ -78,6 +78,19 @@ public class SpecBuilder {
         }
     }
 
+    public void addClass(String javaName, String className, int marksWorth){
+
+        try{
+
+            AssignmentJava java = spec.getJava(javaName);
+            AssignmentClass c = new AssignmentClass(className, marksWorth);
+            java.addProperty(c);
+        } catch(NullPointerException e){
+            e.printStackTrace();
+        }
+
+    }
+
     // Add to AssignmentJava.properties
     public void setPropertyVisibility(String javaName, String propertyName, String visibility) {
         try {

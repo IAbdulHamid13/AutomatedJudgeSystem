@@ -7,8 +7,7 @@ import org.example.TestCreation.AssignmentJava;
 import org.example.TestCreation.AssignmentMethod;
 import org.example.TestCreation.AssignmentSpec;
 import org.example.TestCreation.ItemVisibility;
-import org.example.TestCreation.TestMaker;
-import org.example.TestCreation.TestRunner;
+import org.example.TestCreation.TestMarker;
 
 public class App {
     public static void main(String[] args) {
@@ -36,8 +35,8 @@ public class App {
         AssignmentConstructor constr2 = new AssignmentConstructor("Calculator", ItemVisibility.PROTECTED, 5);
         AssignmentConstructor constr3 = new AssignmentConstructor("Calculator", ItemVisibility.PRIVATE, 5);
 
-        AssignmentClass class1 = new AssignmentClass("Calculator");
-        AssignmentClass interface1 = new AssignmentClass("MyInterface");
+        AssignmentClass class1 = new AssignmentClass("Calculator", 5);
+        AssignmentClass interface1 = new AssignmentClass("MyInterface", 5);
 
         
 
@@ -78,16 +77,25 @@ public class App {
 
         assignment.addProperty(interface1);
 
+        AssignmentJava assignment2 = new AssignmentJava("Assignment 2");
+
+        AssignmentClass ass2Class = new AssignmentClass("MyAbstractClass", 5);
+
+        assignment2.addProperty(ass2Class);
+
 
         AssignmentSpec aSpec = new AssignmentSpec();
 
         aSpec.addSpecFile(assignment);
 
-        TestMaker testMaker = new TestMaker(aSpec);
+        aSpec.addSpecFile(assignment2);
 
-        TestRunner testRunner = new TestRunner(testMaker.createTests());
+        TestMarker testMarker = new TestMarker(aSpec);
 
-        testRunner.runTests();
+        testMarker.markTests();
+
+        testMarker.printResults();
+
 
     }
 }

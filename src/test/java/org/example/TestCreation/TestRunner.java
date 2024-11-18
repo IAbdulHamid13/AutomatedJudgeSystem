@@ -4,8 +4,14 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.DynamicTest;
 
+import lombok.Setter;
+
 public class TestRunner {
-    private ArrayList<ArrayList<DynamicTest>> tests;
+    @Setter private ArrayList<ArrayList<DynamicTest>> tests;
+
+    public TestRunner(){
+        
+    }
 
     public TestRunner(ArrayList<ArrayList<DynamicTest>> tests) {
         this.tests = tests;

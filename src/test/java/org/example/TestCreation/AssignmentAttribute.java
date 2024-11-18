@@ -14,11 +14,16 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AssignmentAttribute extends AssignmentProperty {
-    private String type;
-    private String className;
+    @Setter private String type;
+    @Setter private String className;
+
+    public AssignmentAttribute(){
+        super();
+        this.marksAwarded = 0;
+    }
     
 
-    public AssignmentAttribute(String name, String type, String className, ItemVisibility visibility, Boolean isFinal, Boolean isStatic, int marks) {
+    public AssignmentAttribute(String name, String type, String className, ItemVisibility visibility, Boolean isFinal, Boolean isStatic, int marksWorth) {
         super();
         this.name = name;
         this.type = type;
@@ -26,7 +31,8 @@ public class AssignmentAttribute extends AssignmentProperty {
         this.visibility = visibility;
         this.isFinal = isFinal;
         this.isStatic = isStatic;
-        this.marks = marks;
+        this.marksWorth = marksWorth;
+        this.marksAwarded = 0;
     }
 
     public DynamicTest generateTest() {
@@ -46,6 +52,8 @@ public class AssignmentAttribute extends AssignmentProperty {
                     String modifierString = Modifier.toString(f.getModifiers());
 
                     if(f.getName().equals(name) && fieldType.equals(type) && areModifiersEqual(modifierString)){
+
+                        marksAwarded = marksWorth;
 
                         return dynamicTest("Attribute test for: " + " " + type + " " + name, () -> assertTrue(true));
 

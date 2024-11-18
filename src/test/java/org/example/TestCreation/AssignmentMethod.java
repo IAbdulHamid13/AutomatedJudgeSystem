@@ -13,14 +13,19 @@ import lombok.Setter;
 
 @Getter
 public class AssignmentMethod extends AssignmentProperty {
-    private String className;
-    private String returnType;
+    @Setter private String className;
+    @Setter private String returnType;
     @Setter private Object expectedValue;
     @Setter private ArrayList<String> parameterTypes;
     @Setter private boolean isAbstract;
-    private ArrayList<Object> testParams;
+    @Setter private ArrayList<Object> testParams;
 
-    public AssignmentMethod(String name, String returnType, ItemVisibility visibility, String className, Boolean isFinal, Boolean isStatic, Boolean isAbstract, int marks) {
+    public AssignmentMethod(){
+        super();
+        this.marksAwarded = 0;
+    }
+
+    public AssignmentMethod(String name, String returnType, ItemVisibility visibility, String className, Boolean isFinal, Boolean isStatic, Boolean isAbstract, int marksWorth) {
         super();
         this.name = name;
         this.returnType = returnType;
@@ -31,7 +36,8 @@ public class AssignmentMethod extends AssignmentProperty {
         this.isFinal = isFinal;
         this.isStatic = isStatic;
         testParams = new ArrayList<Object>();
-        this.marks = marks;
+        this.marksWorth = marksWorth;
+        this.marksAwarded = 0;
     }
 
     public void setExpectedValue(String type, String value){
@@ -139,8 +145,12 @@ public class AssignmentMethod extends AssignmentProperty {
 
                                 //If invoking the method returns the expected value, pass test case
 
-                                if(m.invoke(instance, testParams.toArray()).equals(expectedValue))
+                                if(m.invoke(instance, testParams.toArray()).equals(expectedValue)){
+                        
+                                    marksAwarded = marksWorth;
                                     return dynamicTest("Method test for " + className + "." + name + " ", () -> assertTrue(true));
+                                
+                                }
 
                             }catch(Exception e){
 
@@ -151,8 +161,12 @@ public class AssignmentMethod extends AssignmentProperty {
                             
 
                         }
-                        else
+                        else{
+                            
+                            marksAwarded = marksWorth;
                             return dynamicTest("Method test for " + className + "." + name + " ", () -> assertTrue(true));
+                        
+                        }
 
                     }
 

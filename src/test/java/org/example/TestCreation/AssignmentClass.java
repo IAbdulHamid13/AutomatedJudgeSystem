@@ -5,14 +5,31 @@ import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 
 import org.junit.jupiter.api.DynamicTest;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class AssignmentClass extends AssignmentProperty{
 
-    private String className;
+    @Setter private String className;
 
-    public AssignmentClass(String className){
+    public AssignmentClass(){
+        super();
+        this.marksAwarded = 0;
+    }
 
-        this.className = className;
+    public AssignmentClass(String className, int marksWorth){
 
+        this.className = "org.example.AssignmentFiles." + className;
+        this.marksWorth = marksWorth;
+        this.marksAwarded = 0;
+
+    }
+    
+    @Override
+    public String getName(){
+        return className;
     }
 
     @SuppressWarnings("unused")
@@ -23,11 +40,13 @@ public class AssignmentClass extends AssignmentProperty{
 
             Class<?> c = Class.forName(className);
 
+            marksAwarded = marksWorth;
+
             return dynamicTest("Class test for: " + className, () -> assertTrue(true));
 
         } catch(ClassNotFoundException e){
 
-            return dynamicTest("Class test for: " + className, () -> assertTrue(true));
+            return dynamicTest("Class test for: " + className, () -> assertTrue(false));
 
         }
         

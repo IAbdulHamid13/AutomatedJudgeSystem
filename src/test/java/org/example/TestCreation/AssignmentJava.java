@@ -32,6 +32,23 @@ public class AssignmentJava{
         this.properties.add(property);
     }
 
+    public Boolean removeProperty(String name){
+
+        for(int i = 0;i < properties.size();i++){
+
+            if(properties.get(i).getName().equals(name)){
+
+                properties.remove(i);
+                return true;
+
+            }
+
+        }
+
+        return false;
+
+    }
+
     public AssignmentMethod getMethod(String methodName) {
         for (Testable prop : properties) {
             if (prop instanceof AssignmentMethod) {

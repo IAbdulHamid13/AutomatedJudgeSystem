@@ -4,10 +4,16 @@ import java.util.ArrayList;
 
 import org.junit.jupiter.api.DynamicTest;
 
+import lombok.Setter;
+
 public class TestMaker {
     private TestableIterator iterator;
-    @SuppressWarnings("unused")
-    private AssignmentSpec spec;
+    
+    @Setter private AssignmentSpec spec;
+
+    public TestMaker(){
+        this.iterator = spec.getAssignmentItemIterator();
+    }
 
     public TestMaker(AssignmentSpec spec) {
         this.spec = spec;
