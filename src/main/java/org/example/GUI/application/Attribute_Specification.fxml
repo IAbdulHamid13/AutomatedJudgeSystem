@@ -23,7 +23,7 @@
             <Button fx:id="attributeSubmit" layoutX="425.0" layoutY="358.0" mnemonicParsing="false" onAction="#submitAttribute" text="Confirm" />
             <Button fx:id="attributeCancel" layoutX="255.0" layoutY="358.0" mnemonicParsing="false" onAction="#cancelAttribute" text="Cancel" />
             <CheckBox fx:id="attributeFinal" layoutX="417.0" layoutY="196.0" mnemonicParsing="false" text="Final" />
-            <CheckBox fx:id="attributeAbstract" layoutX="495.0" layoutY="196.0" mnemonicParsing="false" text="Static" />
+            <CheckBox fx:id="isStatic" layoutX="495.0" layoutY="196.0" mnemonicParsing="false" text="Static" />
             <TextField fx:id="attributeName" layoutX="181.0" layoutY="82.0" promptText="Enter Name of Attribute" />
             <TextField fx:id="attributeClassType" layoutX="380.0" layoutY="82.0" promptText="Enter the Class Type" />
             <TextField fx:id="attributeClassName" layoutX="181.0" layoutY="136.0" promptText="Enter the Class Name" />
@@ -34,7 +34,6 @@
             </Label>
             <TextField fx:id="attributeMark" layoutX="218.0" layoutY="192.0" prefHeight="26.0" prefWidth="75.0" promptText="Enter Marks" />
             <TextField fx:id="attributeVisibility" layoutX="380.0" layoutY="136.0" promptText="Enter Visibility" />
-            <TextField fx:id="attributeClassName1" layoutX="209.0" layoutY="239.0" prefHeight="63.0" prefWidth="294.0" promptText="Enter the Class Name" />
          </children>
       </AnchorPane>
    </children>

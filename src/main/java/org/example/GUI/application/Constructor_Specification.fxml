@@ -23,7 +23,7 @@
             <Button fx:id="attributeCancel" layoutX="255.0" layoutY="358.0" mnemonicParsing="false" text="Cancel" />
             <TextField fx:id="attributeName" layoutX="181.0" layoutY="82.0" promptText="Enter the Class Name" />
             <TextField fx:id="attributeClassType" layoutX="380.0" layoutY="82.0" promptText="Enter the Class Type" />
-            <Label alignment="CENTER" layoutX="146.0" layoutY="46.0" prefHeight="18.0" prefWidth="464.0" text="Attrbute Details">
+            <Label alignment="CENTER" layoutX="146.0" layoutY="46.0" prefHeight="18.0" prefWidth="464.0" text="Constructor Details">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
