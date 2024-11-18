@@ -14,6 +14,9 @@ name, return type class name and parameters(parameter type)(maybe optional)
 Constructor testing
 class name, parameters
 
+
+Create an assignmentJava
+
 */
 	public void uploadAttributes(ActionEvent e) {
 		
@@ -26,6 +29,8 @@ class name, parameters
 	public void uploadExpectedResult(ActionEvent e) {
 		
 	}
+
+	//have a specbuilder object, test marker accepts a spec which specbuilder creates. it has a getspec to give the assignment spec
 	
 	
 }
