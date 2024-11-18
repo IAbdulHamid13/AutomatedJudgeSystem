@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.URLClassLoader;
 
-import org.example.TestCreation.AssignmentSpec;
+//import org.example.TestCreation.AssignmentSpec;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -21,7 +21,7 @@ public class Main extends Application {
 	
 	public static void main(String[] args) {
 
-		AssignmentSpec spec = new AssignmentSpec();
+		//AssignmentSpec spec = new AssignmentSpec();
 
 		launch(args);
 	}

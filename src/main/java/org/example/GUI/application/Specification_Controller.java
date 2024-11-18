@@ -3,8 +3,8 @@ package org.example.GUI.application;
 
 import java.io.IOException;
 
-import org.example.TestCreation.AssignmentJava;
-import org.example.TestCreation.AssignmentSpec;
+//import org.example.TestCreation.AssignmentJava;
+//import org.example.TestCreation.AssignmentSpec;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -45,7 +45,7 @@ public class Specification_Controller extends Menu_Controller{
 
 	public void createObject(){
 
-		AssignmentSpec j1 = new AssignmentSpec();
+		//AssignmentSpec j1 = new AssignmentSpec();
 
 	}	
 	

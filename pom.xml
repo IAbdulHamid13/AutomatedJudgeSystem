@@ -86,13 +86,13 @@
     </plugins>
     <resources>
       <resource>
-        <directory>src/test/java/org/example/GUI/application</directory>
+        <directory>src/main/java/org/example/GUI/application</directory>
         <includes>
           <include>**/*.fxml</include>
         </includes>
       </resource>
       <resource>
-        <directory>src/test/java/org/example/GUI</directory>
+        <directory>src/main/java/org/example/GUI</directory>
         <includes>
           <include>**/*.jpeg</include>
         </includes>
