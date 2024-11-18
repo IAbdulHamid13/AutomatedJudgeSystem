@@ -1,7 +1,12 @@
 package org.example.TestCreation;
 
 
+import java.io.File;
 import java.util.ArrayList;
+
+import javax.swing.JFileChooser;
+
+import org.example.Views.PDFReport;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -38,6 +43,8 @@ public class TestMarker {
 
         for(AssignmentJava j : javaFiles){
 
+            results.add("File: " + j.getName());
+
             for(Testable property : j.getProperties()){
 
                 int[] marks = {1, 2};
@@ -64,13 +71,39 @@ public class TestMarker {
 
     public void printResults(){
 
-        for(int i = 0;i <= results.size() - 3; i = i + 3){
+        StringBuilder finalOutput = new StringBuilder();
 
-            System.out.println("Property tested for: " + results.get(i));
-            System.out.println("Marks earned: " + results.get(i + 1) + "/" + results.get(i + 2) + "\n");
+        int i = 0;
 
+        while (i < results.size()) {
+            String entry = results.get(i);
+            
+            if (entry.startsWith("File: ")) { // Check if the entry is a file header
+
+                finalOutput.append(entry).append("\n\n");
+
+                System.out.println(entry + "\n\n");
+                i++;
+            } else {
+                
+                String propertyTested = "Property tested for: " + results.get(i);
+                String marksEarned = "Marks earned: " + results.get(i + 1) + "/" + results.get(i + 2) + "\n";
+
+                finalOutput.append(propertyTested).append("\n").append(marksEarned).append("\n");
+                System.out.println(propertyTested);
+                System.out.println(marksEarned);
+
+                i += 3;
+            }
         }
 
+        System.out.println("Final Output (the String):\n" + finalOutput.toString());
+
+        //create report below
+
+        PDFReport pdf = new PDFReport(finalOutput.toString(), "src\\\\main\\\\java\\\\org\\\\example\\\\AssignmentFiles");
+        pdf.generateReport();  //assumed that the same location referred to where the zip files were extracted
+
+
     }
-    
 }
