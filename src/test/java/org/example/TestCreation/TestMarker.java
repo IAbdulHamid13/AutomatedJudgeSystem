@@ -3,6 +3,8 @@ package org.example.TestCreation;
 
 import java.util.ArrayList;
 
+import org.example.Views.PDFReport;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -93,6 +95,12 @@ public class TestMarker {
         }
 
         System.out.println("Final Output (the String):\n" + finalOutput.toString());
+
+        //create report below
+
+        PDFReport pdf = new PDFReport(finalOutput.toString(), "src\\\\main\\\\java\\\\org\\\\example\\\\AssignmentFiles");
+        pdf.generateReport();  //assumed that the same location referred to where the zip files were extracted
+
 
     }
     
