@@ -1,6 +1,10 @@
 package org.example.GUI.application;
 
+
 import java.io.IOException;
+
+import org.example.TestCreation.AssignmentJava;
+import org.example.TestCreation.AssignmentSpec;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -38,16 +42,12 @@ public class Specification_Controller extends Menu_Controller{
 		stage.show();
 
 	}
-	
-	/*public void javaSpecification() {
-		//pass the 
-		root = FXMLLoader.load(getClass().getResource("/Java_Specification.fxml"));
-		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
-		scene = new Scene(root);
-		stage.setScene(scene);
-		stage.show();
-	}*/
-	
+
+	public void createObject(){
+
+		AssignmentSpec j1 = new AssignmentSpec();
+
+	}	
 	
 	
 	
