@@ -1,17 +1,12 @@
 ## Changes made from last commit
 
-
-- Implemented removal functionality for tests
-    
-    - This was done by adding 'removeProperty' function to AssignmentJava
- 
-    - This was tested and works successfully
-
+- Migrated GUI from main folder to test folder
 
 ## Next tasks
 
+- Complete implementation for controllers
 
-- Revise overall program to determine if there are any possible improvements
+- Create acstract class for keeping track of main AssignmentSpec
 
 - **Merge GUI branch and ensure GUI is still functional**
 

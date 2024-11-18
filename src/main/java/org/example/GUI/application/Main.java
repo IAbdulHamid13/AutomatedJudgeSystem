@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.URLClassLoader;
 
+//import org.example.TestCreation.AssignmentSpec;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -16,8 +18,11 @@ import javafx.scene.image.Image;
 //import javafx.scene.paint.Color;
 
 public class Main extends Application {
-
+	
 	public static void main(String[] args) {
+
+		//AssignmentSpec spec = new AssignmentSpec();
+
 		launch(args);
 	}
 
@@ -33,9 +38,6 @@ public class Main extends Application {
 			stage.getIcons().add(icon);
 
 			stage.setTitle("Assignment Marking Program");
-
-			stage.setFullScreen(true);
-			stage.setFullScreenExitHint("THERE IS NO ESCAPE >:( , unless you press esc");
 
 			stage.setScene(scene);
 

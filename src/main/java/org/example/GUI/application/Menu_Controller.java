@@ -18,7 +18,6 @@ public class Menu_Controller {
 	private Parent root;
 	
 	public void menuCreateSpecifications(ActionEvent e) throws IOException {
-		System.out.println("Menu Specification");
 		
 		root = FXMLLoader.load(getClass().getResource("/Main_Specification.fxml"));
 		stage = (Stage)((Node)e.getSource()).getScene().getWindow();
