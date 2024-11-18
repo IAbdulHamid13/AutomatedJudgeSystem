@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.net.URLClassLoader;
 
+import org.example.TestCreation.AssignmentSpec;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -18,6 +20,9 @@ import javafx.scene.image.Image;
 public class Main extends Application {
 	
 	public static void main(String[] args) {
+
+		AssignmentSpec spec = new AssignmentSpec();
+
 		launch(args);
 	}
 
